@@ -4,8 +4,14 @@
   "main": "index.js",
   "author": "KoriKonchi <korikonchi91@gmail.com>",
   "license": "MIT",
+  "source": "src/index.html",
+  "scripts": {
+    "dev": "yarn parcel",
+    "build": "yarn parcel build"
+  },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.0.1",
     "parcel": "^2.0.1"
-  }
+  },
+  "browserslist": "> 0.2%, last 2 versions, not dead"
 }
