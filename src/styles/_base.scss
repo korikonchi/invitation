@@ -29,8 +29,10 @@ body {
   font-family: $font-family;
   font-kerning: normal;
   height: 100%;
+  max-width: 100%;
   min-width: $min-width;
   overflow-y: auto;
+  // overflow-x: hidden;
   background: $background-color;
 }
 
@@ -61,4 +63,10 @@ body {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }

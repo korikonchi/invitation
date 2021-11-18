@@ -1,19 +1,27 @@
-$padding: 1.7rem;
+$padding: 2rem;
+
+// Globals
+.title {
+  font-family: 'Dancing Script';
+  text-transform: capitalize;
+  text-align: center;
+  color: $primary;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.with-padding {
+  padding: 0 $padding;
+}
 
 .sec-1 {
   height: 100%;
   position: relative;
 }
 
-img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-
 .box-text {
   position: absolute;
-  top: 60%;
+  top: 55%;
   left: 0;
   right: 0;
   background-color: rgba(255, 255, 255, 0.308);
@@ -27,6 +35,7 @@ img {
   font-weight: 300;
   text-transform: uppercase;
   margin-bottom: 4rem;
+  font-family: 'Alice';
 }
 
 .box-text--sub {
@@ -41,25 +50,14 @@ img {
   text-transform: uppercase;
   font-weight: 200;
 }
+
 .sec-2 {
   height: 100%;
-  max-width: 100vw;
-  position: relative;
-}
-.recipe {
-  position: absolute;
-  top: 15%;
-  left: 0%;
-  right: 0%;
-  text-align: center;
-  font-size: 3rem;
-  color: $primary;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 .list-recipe {
-  position: absolute;
-  top: 33%;
-  left: 0%;
-  right: 0%;
   text-align: center;
   list-style: none;
   text-transform: capitalize;
@@ -76,105 +74,100 @@ img {
   fill: $secondary;
 }
 .paragraph-sec2 {
-  position: absolute;
-  top: 55%;
-  left: 0%;
-  right: 0%;
   color: $gray600;
   text-align: center;
   text-transform: capitalize;
 }
-.accountant {
-  position: absolute;
-  top: 68%;
-  right: 8%;
-  left: 8%;
+
+.timer {
   display: flex;
   justify-content: space-around;
-  color: $gray600;
   text-transform: uppercase;
-}
-.accountant-time {
-  position: absolute;
-  text-align: center;
-
-  top: 135%;
-  left: 50%;
-  translate: -50% -50%;
   color: $gray600;
-  font-size: 0.8rem;
+  margin-bottom: 2rem;
+
+  &-item {
+    text-align: center;
+    flex-basis: 25%;
+    max-width: 100px;
+    flex: 1;
+  }
+  &-time {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: $whiteback;
+    font-size: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  &-text {
+    color: $gray600;
+    font-size: 0.8rem;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+  }
 }
+
 .circle {
   border: 1px solid rgba(250, 250, 250, 0);
-  height: 4.2rem;
-  width: 4.2rem;
-  border-radius: 50%;
   position: relative;
-  color: $whiteback;
+  svg {
+    height: auto;
+    width: 100%;
+  }
+
   &.color--primary {
-    background-color: $primary;
+    svg {
+      fill: $primary;
+    }
   }
   &.color--secondary {
-    background-color: $secondary;
+    svg {
+      fill: $secondary;
+    }
   }
   &.color--tertiary {
-    background-color: $tertiary;
+    svg {
+      fill: $tertiary;
+    }
   }
   &.color--quaternary {
-    background-color: $quaternary;
+    svg {
+      fill: $quaternary;
+    }
   }
 }
 
-.paragraph-circle {
-  position: absolute;
-  text-align: center;
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
-}
 .sec-3 {
-  border: 1px solid red;
   height: 100%;
   max-width: 100vw;
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
-.he {
-  object-fit: contain;
-  height: 6rem;
-  width: 6rem;
-  overflow: hidden;
-  border-radius: 50%;
-  border: 0.1rem solid $tertiary;
-}
-.title-h2 {
-  text-transform: uppercase;
-  color: $primary;
-  font: size 2rem;
-  margin-bottom: 1rem;
-}
 
 .card-profile {
-  border: 0.2rem solid red !important;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 1.08em;
-}
+  font-size: 1.08rem;
 
-.with-padding {
-  padding: 0 $padding;
-}
-
-.message {
-  color: $gray600;
-  padding: 1rem;
+  &-image {
+    height: 6rem;
+    width: 6rem;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 2px solid $tertiary;
+  }
+  &-text {
+    padding: 1rem 0;
+  }
 }
 
 .sec-4 {
-  position: relative;
 }
