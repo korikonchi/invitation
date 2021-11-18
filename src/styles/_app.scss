@@ -133,7 +133,6 @@ img {
   translate: -50% -50%;
 }
 .sec-3 {
-  border: 1px solid red;
   height: 100%;
   max-width: 100vw;
   position: relative;
@@ -149,15 +148,14 @@ img {
   border-radius: 50%;
   border: 0.1rem solid $tertiary;
 }
-.title-h2 {
-  text-transform: uppercase;
+.title {
+  text-transform: capitalize;
   color: $primary;
-  font: size 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
 }
 
 .card-profile {
-  border: 0.2rem solid red !important;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -175,6 +173,50 @@ img {
   padding: 1rem;
 }
 
-.sec-4 {
-  position: relative;
+.our-history {
+  text-align: center;
+  height: 60%;
+  border: 1px solid red !important;
+}
+
+.heart-history {
+  height: 1.2rem;
+  width: 1.2rem;
+  fill: $quaternary;
+  margin-bottom: 3rem;
+}
+.picture-container {
+  height: 45vh;
+  width: 100vw;
+  margin-bottom: 1rem;
+}
+.sec-5 {
+  text-align: center;
+  margin-top: 10rem;
+}
+
+.textarea {
+  margin-top: 2rem;
+  background-color: $whiteback;
+  border: 0.1rem solid $whiteback;
+  border-radius: 2rem;
+  margin-bottom: 1.51rem;
+  color: $gray600;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+.submint {
+  border: 0.05rem solid $tertiary;
+  border-radius: 2rem;
+  width: 40%;
+  padding: 0.5rem;
+  background-color: $secondary;
+  font-size: 1.1rem;
+  color: $whiteback;
+  margin-bottom: 10rem;
+}
+.reception-ring {
+  width: 5.5rem;
+  height: 4.5rem;
+  margin-bottom: 2rem;
 }
