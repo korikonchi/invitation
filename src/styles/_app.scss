@@ -169,5 +169,50 @@ $padding: 2rem;
   }
 }
 
-.sec-4 {
+.our-history {
+  text-align: center;
+  height: 60%;
+  border: 1px solid red !important;
+}
+
+.heart-history {
+  height: 1.2rem;
+  width: 1.2rem;
+  fill: $quaternary;
+  margin-bottom: 3rem;
+}
+.picture-container {
+  height: 45vh;
+  width: 100vw;
+  margin-bottom: 1rem;
+}
+.sec-5 {
+  text-align: center;
+  margin-top: 10rem;
+}
+
+.textarea {
+  margin-top: 2rem;
+  background-color: $whiteback;
+  border: 0.1rem solid $whiteback;
+  border-radius: 2rem;
+  margin-bottom: 1.51rem;
+  color: $gray600;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+.submint {
+  border: 0.05rem solid $tertiary;
+  border-radius: 2rem;
+  width: 40%;
+  padding: 0.5rem;
+  background-color: $secondary;
+  font-size: 1.1rem;
+  color: $whiteback;
+  margin-bottom: 10rem;
+}
+.reception-ring {
+  width: 5.5rem;
+  height: 4.5rem;
+  margin-bottom: 2rem;
 }
