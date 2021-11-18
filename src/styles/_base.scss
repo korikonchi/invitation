@@ -1,10 +1,64 @@
-* {
+*,
+*:after,
+*:before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+$min_width: 320px !default;
+$max_width: 2800px !default;
+$min_font: 16px !default;
+$max_font: 22px !default;
+
+html {
+  @include fluid-type($min_width, $max_width, $min_font, $max_font);
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  height: 100%;
+  max-height: 100vh;
+  width: 100%;
+  min-width: $min-width;
+  overflow: hidden;
+}
+
 body {
-  height: 100vh;
-  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $font-color;
+  font-family: $font-family;
+  font-kerning: normal;
+  height: 100%;
+  min-width: $min-width;
   overflow-y: auto;
+  background: $background-color;
+}
+
+/**
+ * Hide text while making it readable for screen readers
+ */
+.reader-only,
+.hidden {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px !important;
+  overflow: hidden;
+  padding: 0 !important;
+  position: absolute;
+  top: 0;
+  width: 1px !important;
+  white-space: nowrap;
+  opacity: 0;
+}
+
+.noSelect {
+  user-select: none;
+}
+
+/** Common Extensions **/
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

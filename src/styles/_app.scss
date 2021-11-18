@@ -1,6 +1,7 @@
+$padding: 1.7rem;
+
 .sec-1 {
   height: 100%;
-  max-width: 100vw;
   position: relative;
 }
 
@@ -25,11 +26,12 @@ img {
   font-size: 3.2rem;
   font-weight: 300;
   text-transform: uppercase;
+  margin-bottom: 4rem;
 }
 
 .box-text--sub {
   position: absolute;
-  top: 86%;
+  top: 85%;
   left: 0%;
   right: 0%;
   color: white;
@@ -51,7 +53,7 @@ img {
   right: 0%;
   text-align: center;
   font-size: 3rem;
-  color: rgb(132, 90, 91);
+  color: $primary;
 }
 .list-recipe {
   position: absolute;
@@ -61,25 +63,118 @@ img {
   text-align: center;
   list-style: none;
   text-transform: capitalize;
-  color: rgb(115, 115, 115);
+  color: $gray600;
   padding-bottom: 1rem;
   font-size: 1.1rem;
 }
-.list-recipe--1 {
-  height: 5%;
-  width: 5%;
+.list-recipe--text {
+  padding: 0.5rem;
+}
+.check {
+  height: 1rem;
+  width: 1rem;
+  fill: $secondary;
 }
 .paragraph-sec2 {
   position: absolute;
   top: 55%;
   left: 0%;
   right: 0%;
+  color: $gray600;
   text-align: center;
+  text-transform: capitalize;
+}
+.accountant {
+  position: absolute;
+  top: 68%;
+  right: 8%;
+  left: 8%;
+  display: flex;
+  justify-content: space-around;
+  color: $gray600;
+  text-transform: uppercase;
+}
+.accountant-time {
+  position: absolute;
+  text-align: center;
+
+  top: 135%;
+  left: 50%;
+  translate: -50% -50%;
+  color: $gray600;
+  font-size: 0.8rem;
+}
+.circle {
+  border: 1px solid rgba(250, 250, 250, 0);
+  height: 4.2rem;
+  width: 4.2rem;
+  border-radius: 50%;
+  position: relative;
+  color: $whiteback;
+  &.color--primary {
+    background-color: $primary;
+  }
+  &.color--secondary {
+    background-color: $secondary;
+  }
+  &.color--tertiary {
+    background-color: $tertiary;
+  }
+  &.color--quaternary {
+    background-color: $quaternary;
+  }
 }
 
-.svg {
+.paragraph-circle {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+.sec-3 {
   border: 1px solid red;
-  fill: red;
-  height: 2rem;
-  width: 2rem;
+  height: 100%;
+  max-width: 100vw;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.he {
+  object-fit: contain;
+  height: 6rem;
+  width: 6rem;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 0.1rem solid $tertiary;
+}
+.title-h2 {
+  text-transform: uppercase;
+  color: $primary;
+  font: size 2rem;
+  margin-bottom: 1rem;
+}
+
+.card-profile {
+  border: 0.2rem solid red !important;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.08em;
+}
+
+.with-padding {
+  padding: 0 $padding;
+}
+
+.message {
+  color: $gray600;
+  padding: 1rem;
+}
+
+.sec-4 {
+  position: relative;
 }
