@@ -5,7 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/main.scss" />
-    <title>INVITACION</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alice&family=Bellota+Text&family=Dancing+Script:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Solo Faltas Tu!</title>
   </head>
   <body>
     <div class="sec-1">
@@ -21,7 +27,7 @@
     </div>
     <!-- section 2 -->
     <div class="sec-2 with-padding">
-      <h2 class="recipe">receta para nuestra boda</h2>
+      <h2 class="title">receta para nuestra boda</h2>
       <ul class="list-recipe">
         <li>
           novios
@@ -107,51 +113,103 @@
         <li class="list-recipe--text">ingrediente principal: tu compania</li>
       </ul>
       <p class="paragraph-sec2">te esperamos ya falta menos....</p>
-      <div class="accountant">
-        <div class="circle color--primary">
-          <p class="paragraph-circle">100</p>
-          <p class="accountant-time">dias</p>
+      <div class="timer">
+        <div class="timer-item">
+          <div class="circle color--primary">
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+            >
+              <path
+                d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"
+              ></path>
+            </svg>
+            <p class="timer-time">90</p>
+          </div>
+          <p class="timer-text">dias</p>
         </div>
-        <div class="circle color--secondary">
-          <p class="paragraph-circle">00</p>
-          <p class="accountant-time">horas</p>
+        <div class="timer-item">
+          <div class="circle color--secondary">
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+            >
+              <path
+                d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"
+              ></path>
+            </svg>
+            <p class="timer-time">00</p>
+          </div>
+          <p class="timer-text">horas</p>
         </div>
-        <div class="circle color--tertiary">
-          <p class="paragraph-circle">00</p>
-          <p class="accountant-time">minutos</p>
+        <div class="timer-item ellipsis">
+          <div class="circle color--tertiary">
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+            >
+              <path
+                d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"
+              ></path>
+            </svg>
+            <p class="timer-time">00</p>
+          </div>
+          <p class="timer-text ellipsis">minutos</p>
         </div>
-        <div class="circle color--quaternary">
-          <p class="paragraph-circle">00</p>
-          <p class="accountant-time">segundos</p>
+        <div class="timer-item ellipsis">
+          <div class="circle color--quaternary">
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+            >
+              <path
+                d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"
+              ></path>
+            </svg>
+            <p class="timer-time">00</p>
+          </div>
+          <p class="timer-text ellipsis">segundos</p>
         </div>
       </div>
     </div>
     <!-- section 3 -->
     <div class="sec-3 with-padding">
       <div class="card-profile">
-        <h2 class="title-h2">EL</h2>
-        <figure class="he">
+        <h2 class="title card-profile-title">Él</h2>
+        <figure class="card-profile-image">
           <img
             src="https://assets.digitalvilla.ca/images/issra-jess/isrra-profile.jpg"
             alt=""
             class="profile"
           />
         </figure>
-        <p class="message">
+        <p class="card-profile-text">
           Es cierto que el amor no se busca llega cuando menos lo esperas y de
           pronto apareciste, y supe que queria pasar mi vida a tu lado.
         </p>
       </div>
       <div class="card-profile">
-        <h2 class="title-h2">ELla</h2>
-        <figure class="he she">
+        <h2 class="title card-profile-title">Ella</h2>
+        <figure class="card-profile-image">
           <img
             src="https://assets.digitalvilla.ca/images/issra-jess/jess-profile.jpg"
             alt=""
             class="profile"
           />
         </figure>
-        <p class="message">
+        <p class="card-profile-text">
           Tanto tiempo sonando con este gran dia pero faltaba mi companero,mi
           amigo,mi complice,faltabas tu...nos espera la mejor aventura de
           nuestras vidas!
