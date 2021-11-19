@@ -21,9 +21,9 @@
         class="img-main"
       />
       <h1 class="box-text">
-        <span class="box-text--main">israel & jessica</span>
+        <span class="box-text--main animated-main">israel & jessica</span>
       </h1>
-      <span class="box-text--sub">-- nos casamos --</span>
+      <span class="box-text--sub animated-sub">-- nos casamos --</span>
     </div>
     <!-- section 2 -->
     <div class="sec-2 container">
@@ -316,7 +316,7 @@
           Mandandanos tus deseos...
   </textarea
         >
-        <input class="btn-submit" type="submit" value="ENVIAR" />
+        <input class="btn-submit btn" type="submit" value="ENVIAR" />
       </form>
     </div>
     <div class="container">
@@ -349,7 +349,7 @@
         Recepcion 3:30 pm <br />
         ceremonia 4:00 pm
       </p>
-      <a class="btn-submit link" href="">ubicacion</a>
+      <a class="btn-submit link btn" href="">ubicacion</a>
     </div>
     <div class="sec-confirm container">
       <h2 class="title">confirmar asistencia</h2>
@@ -362,7 +362,6 @@
           name="nombre"
           placeholder="Nombre Completo"
         />
-        <!-- Label missing name-->
         <label for="dates-input-apellido" class="hidden">apellidos</label>
         <input
           id="dates-input-apellido"
@@ -378,7 +377,39 @@
           type="text"
           placeholder="# invitados"
         />
-        <input type="submit" class="btn-submit" value="ENVIAR" />
+
+        <input
+          class="dates-inputs"
+          type="number"
+          min="1"
+          max="9"
+          step="1"
+          value="1"
+        />
+        <!--  -->
+        <div class="radio">
+          <p class="dates-inputs family">familia</p>
+          <div class>
+            <div class="dates-inputs">
+              <input
+                type="radio"
+                id="novio"
+                name="drone"
+                value="novio"
+                checked
+              />
+              <label for="novio">novio</label>
+            </div>
+
+            <!-- <p>familia</p> -->
+            <div class="dates-inputs">
+              <input type="radio" id="novia" name="drone" value="novia" />
+              <label for="novia">novia</label>
+            </div>
+          </div>
+        </div>
+        <!--  -->
+        <input type="submit" class="btn-submit btn" value="ENVIAR" />
       </form>
     </div>
 
@@ -402,7 +433,7 @@
         Liverpool- Boda Israel y Jessica <br /><br />
         # Evento- 50755093 <br />
       </p>
-      <a class="btn-submit link" href="">ver mesa</a>
+      <a class="btn-submit link btn" href="">ver mesa</a>
     </div>
     <div class="check-list container">
       <!--  -->

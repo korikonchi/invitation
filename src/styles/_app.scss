@@ -240,8 +240,16 @@ form {
   }
 
   .textarea {
-    height: 8rem;
+    height: 7rem;
   }
+}
+.radio {
+  display: flex;
+  justify-content: space-evenly;
+}
+.family {
+  display: flex;
+  align-items: center;
 }
 
 .btn-submit {
@@ -280,4 +288,67 @@ p {
 }
 .number-checklist {
   color: $colorfont;
+}
+
+@keyframes MOVEINLEFT {
+  0% {
+    opacity: 0;
+    transform: translateX(-15rem);
+  }
+  60% {
+    opacity: 0.6;
+    transform: translateX(5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0rem);
+  }
+}
+@keyframes MOVEINRIGHT {
+  0% {
+    opacity: 0;
+    transform: translateX(15rem);
+  }
+  60% {
+    opacity: 0.6;
+    transform: translateX(-5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0rem);
+  }
+}
+.animated-main {
+  animation: MOVEINLEFT 6s ease-out;
+  animation-fill-mode: backwards;
+}
+
+@keyframes MOVEINUP {
+  0% {
+    opacity: 0;
+    transform: translateY(15rem);
+  }
+  60% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
+}
+.animated-sub {
+  animation: MOVEINUP 5s ease-out 0.4s;
+  animation-fill-mode: backwards;
+}
+.btn {
+  transition: all 0.2s;
+}
+.btn:active {
+  transform: translatey(-0.2rem);
+  box-shadow: 0 0.5rem 1rem $quaternary;
+}
+.btn:hover {
+  transform: translatey(-0.2rem);
+  /* add shadow at button x,y,intensity and color */
+  box-shadow: 0 1rem 4rem $quaternary;
 }
