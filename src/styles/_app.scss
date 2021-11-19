@@ -1,5 +1,3 @@
-$padding: 2rem;
-
 // Globals
 .title {
   font-family: 'Dancing Script';
@@ -7,11 +5,7 @@ $padding: 2rem;
   text-align: center;
   color: $primary;
   font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.with-padding {
-  padding: 0 $padding;
+  margin-bottom: 3rem;
 }
 
 .sec-1 {
@@ -56,13 +50,14 @@ $padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  // border: 1px solid red !important;
 }
 .list-recipe {
   text-align: center;
   list-style: none;
   text-transform: capitalize;
   color: $gray600;
-  padding-bottom: 1rem;
+  // padding-bottom: 1rem;
   font-size: 1.1rem;
 }
 .list-recipe--text {
@@ -88,8 +83,8 @@ $padding: 2rem;
 
   &-item {
     text-align: center;
+    max-width: 6.25rem;
     flex-basis: 25%;
-    max-width: 100px;
     flex: 1;
   }
   &-time {
@@ -179,40 +174,110 @@ $padding: 2rem;
   height: 1.2rem;
   width: 1.2rem;
   fill: $quaternary;
+
   margin-bottom: 3rem;
 }
 .picture-container {
-  height: 45vh;
+  height: 60vh;
   width: 100vw;
   margin-bottom: 1rem;
 }
 .sec-5 {
   text-align: center;
-  margin-top: 10rem;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+.sec-reception {
+  text-align: center;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  height: 100%;
+}
+.avg-container {
+  width: 5rem;
+  height: 4.5rem;
+  margin: 0 auto 3rem;
+}
+.sec-confirm {
+  border: 1px solid red !important;
+  height: 100vh;
+  text-align: center;
+}
+.container {
+  margin: 0 auto 5rem;
+  padding: 0 var(--sectionPadding);
+  border: 2px solid #f0c !important;
+
+  @include media(xs) {
+    --sectionPadding: 2rem;
+  }
+
+  @include media(sm) {
+    --sectionPadding: 4rem;
+  }
 }
 
-.textarea {
-  margin-top: 2rem;
-  background-color: $whiteback;
-  border: 0.1rem solid $whiteback;
-  border-radius: 2rem;
-  margin-bottom: 1.51rem;
-  color: $gray600;
-  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
-    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: rem(500);
+  margin: 0 auto;
+
+  .dates-inputs,
+  .textarea {
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+      rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    border: 0.1rem solid $whiteback;
+    background-color: $whiteback;
+    margin-bottom: 1.5rem;
+    border-radius: 2rem;
+    padding: 1rem 0.5rem;
+    resize: none;
+
+    &:disabled {
+      cursor: not-allowed !important;
+    }
+  }
+
+  .textarea {
+    height: 8rem;
+  }
 }
-.submint {
+
+.btn-submit {
+  box-shadow: none;
   border: 0.05rem solid $tertiary;
   border-radius: 2rem;
-  width: 40%;
+  width: 10rem;
   padding: 0.5rem;
   background-color: $secondary;
   font-size: 1.1rem;
   color: $whiteback;
-  margin-bottom: 10rem;
+  margin: 0 auto 3rem;
 }
-.reception-ring {
-  width: 5.5rem;
-  height: 4.5rem;
-  margin-bottom: 2rem;
+
+p {
+  color: $gray600;
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+  text-align: center;
+}
+.bottom-title {
+  margin-top: 4rem;
+}
+.bottom-sec {
+  margin-bottom: 3rem;
+}
+.link {
+  display: block;
+  text-transform: uppercase;
+  text-align: center;
+}
+.avg-container-guests {
+  width: 5rem;
+  height: 5rem;
+  margin: 0 auto 1rem;
+}
+.number-checklist {
+  color: $colorfont;
 }

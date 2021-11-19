@@ -37,6 +37,25 @@ body {
   background-color: rgb(255, 255, 255);
 }
 
+a,
+input,
+select,
+textarea,
+button {
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+  appearance: none;
+  border-radius: 0;
+  -webkit-appearance: none;
+  text-decoration: none;
+
+  &:disabled {
+    cursor: not-allowed !important;
+  }
+}
+
 /**
  * Hide text while making it readable for screen readers
  */
@@ -65,9 +84,24 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
+svg,
 img {
   height: 100%;
   width: 100%;
   object-fit: cover;
+}
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: $colorfont;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: $colorfont;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: $colorfont;
 }

@@ -26,7 +26,7 @@
       <span class="box-text--sub">-- nos casamos --</span>
     </div>
     <!-- section 2 -->
-    <div class="sec-2 with-padding">
+    <div class="sec-2 container">
       <h2 class="title">receta para nuestra boda</h2>
       <ul class="list-recipe">
         <li>
@@ -112,7 +112,7 @@
         </li>
         <li class="list-recipe--text">ingrediente principal: tu compania</li>
       </ul>
-      <p class="paragraph-sec2">te esperamos ya falta menos....</p>
+      <p class="paragraph-sec2"><em>te esperamos ya falta menos...</em></p>
       <div class="timer">
         <div class="timer-item">
           <div class="circle color--primary">
@@ -185,7 +185,7 @@
       </div>
     </div>
     <!-- section 3 -->
-    <div class="sec-3 with-padding">
+    <div class="sec-3 container">
       <div class="card-profile">
         <h2 class="title card-profile-title">Él</h2>
         <figure class="card-profile-image">
@@ -218,11 +218,15 @@
     </div>
 
     <div class="sec-4">
-      <div class="our-history with-padding">
+      <div class="our-history container">
         <h2 class="title">Nuestra historia</h2>
         <p class="message">
           El plan de Dios para nosotros ya estba trazado... nuestras vidas se
-          cruzaron sin saberlo, yo
+          cruzaron sin saberlo, yo estudiaba el primer ano de gastronomia y tu
+          el ultimo , seguramente al estudiar en la misma escuela nuestros
+          rostros se vieron por mas de una ocasion pero fue 3 anos despues
+          cuando nos conocimos trabajando en el mismo restaurante (1 de miles
+          que encuentras en la ciudad ) y ahi dio comienzo nuestra historia...
         </p>
         <figure>
           <svg
@@ -297,8 +301,8 @@
       </figure>
     </div>
     <!-- section5 -->
-    <div class="sec-5">
-      <h2 class="title">Mensaje de amor para los novios</h2>
+    <div class="sec-5 container bottom-sec">
+      <h2 class="title bottom-title">Mensaje de amor para los novios</h2>
       <p class="">
         compartir contigo este gran dia hara que sea inolvidable! <br />
         <br />
@@ -306,32 +310,226 @@
         poder llevartesiempre con nosotros
       </p>
 
-      <form class="text-area">
-        <textarea
-          class="textarea"
-          ;name="textarea"
-          id="textarea"
-          cols="40"
-          rows="8"
+      <form class="form-wishes">
+        <label for="textarea" class="hidden">deseos</label>
+        <textarea class="textarea" name="deseos" id="textarea">
+          Mandandanos tus deseos...
+  </textarea
         >
-  lorem ipsum...</textarea
-        >
+        <input class="btn-submit" type="submit" value="ENVIAR" />
       </form>
-      <input class="submint" type="submit" value="ENVIAR" />
+    </div>
+    <div class="container">
+      <h2 class="title">Ceremonia y Recepcion</h2>
+      <figure class="avg-container">
+        <svg
+          width="113"
+          height="88"
+          viewBox="0 0 113 88"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M34.6667 35.6667L17.3333 11.4L24.2667 1H45.0667L52 11.4L34.6667 35.6667ZM49.8333 21.8L44.6333 29.1667C54.1667 33.0667 60.6667 42.1667 60.6667 53C60.6667 59.8956 57.9274 66.5088 53.0514 71.3848C48.1755 76.2607 41.5623 79 34.6667 79C27.771 79 21.1578 76.2607 16.2819 71.3848C11.4059 66.5088 8.66667 59.8956 8.66667 53C8.66667 42.1667 15.1667 33.0667 24.7 29.1667L19.5 21.8C7.8 27.4333 0 39.1333 0 53C0 62.1942 3.65237 71.0118 10.1536 77.513C16.6549 84.0143 25.4725 87.6667 34.6667 87.6667C43.8608 87.6667 52.6784 84.0143 59.1797 77.513C65.681 71.0118 69.3333 62.1942 69.3333 53C69.3333 39.1333 61.5333 27.4333 49.8333 21.8Z"
+            fill="#E7C7C8"
+          />
+          <path
+            clip-rule="evenodd"
+            d="M78.5 88C97.5538 88 113 72.5538 113 53.5C113 34.4462 97.5538 19 78.5 19C59.4462 19 44 34.4462 44 53.5C44 72.5538 59.4462 88 78.5 88ZM78.5 79C92.5833 79 104 67.5833 104 53.5C104 39.4167 92.5833 28 78.5 28C64.4167 28 53 39.4167 53 53.5C53 67.5833 64.4167 79 78.5 79Z"
+            fill="#E7C7C8"
+          />
+          <path d="M25 1L35 33.5L45.5 1M52.5 11" stroke="white" />
+        </svg>
+      </figure>
+      <p>
+        12 de febrero-jardin <strong>El Lago de los suenos</strong> <br /><br />
+        camino antiguo a santa ines s/n col.cuatlixco,
+        <strong>cuautla,Morelos</strong> <br />
+        <br />
+        Recepcion 3:30 pm <br />
+        ceremonia 4:00 pm
+      </p>
+      <a class="btn-submit link" href="">ubicacion</a>
+    </div>
+    <div class="sec-confirm container">
+      <h2 class="title">confirmar asistencia</h2>
+      <form class="form-dates">
+        <label for="dates-input-nombre" class="hidden">Nombre</label>
+        <input
+          id="dates-input-nombre"
+          class="dates-inputs"
+          type="text"
+          name="nombre"
+          placeholder="Nombre Completo"
+        />
+        <!-- Label missing name-->
+        <label for="dates-input-apellido" class="hidden">apellidos</label>
+        <input
+          id="dates-input-apellido"
+          class="dates-inputs"
+          type="text"
+          placeholder="Apellidos"
+        />
 
-      <div class="reception">
-        <h2 class="title">Ceremonia y Recepcion</h2>
-        <img class="reception-ring" src="./img/Capture.jpg" alt="" />
-        <p>
-          12 de febrero-jardin <strong>El Lago de los suenos</strong>
-          <br /><br />
-          camino antiguo a santa ines s/n col.cuatlixco,
-          <strong>cuautla,Morelos</strong> <br />
-          <br />
-          Recepcion 3:30 pm <br />
-          ceremonia 4:00 pm
-        </p>
+        <label for="dates-input-invitados" class="hidden">#invitados</label>
+        <input
+          id="dates-input-invitados"
+          class="dates-inputs"
+          type="text"
+          placeholder="# invitados"
+        />
+        <input type="submit" class="btn-submit" value="ENVIAR" />
+      </form>
+    </div>
+
+    <div class="sec-gifts container">
+      <h2 class="title">mesa de regalos</h2>
+      <figure class="avg-container">
+        <svg
+          width="94"
+          height="88"
+          viewBox="0 0 94 88"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M86.7692 23.4409H70.9668C73.3198 20.593 74.4789 16.9565 74.2041 13.2843C73.9293 9.61211 72.2417 6.18532 69.4905 3.71331C66.7394 1.2413 63.1355 -0.0866342 59.4248 0.00438825C55.714 0.0954107 52.1807 1.59842 49.5561 4.2023C48.5093 5.28461 47.6461 6.52792 47 7.88396C46.3536 6.52796 45.4903 5.28467 44.4435 4.2023C41.8186 1.59947 38.2856 0.0973624 34.5754 0.00682362C30.8653 -0.0837151 27.2621 1.24425 24.5114 3.71589C21.7607 6.18754 20.0732 9.61368 19.7981 13.2853C19.5229 16.9569 20.6812 20.5929 23.0332 23.4409H7.23077C5.31371 23.443 3.47579 24.1995 2.12022 25.5443C0.764655 26.889 0.00215306 28.7123 0 30.6141V44.9606C0.00215306 46.8624 0.764655 48.6857 2.12022 50.0305C3.47579 51.3753 5.31371 52.1317 7.23077 52.1338V80.8268C7.23292 82.7286 7.99543 84.5519 9.35099 85.8967C10.7066 87.2414 12.5445 87.9979 14.4615 88H79.5385C81.4555 87.9979 83.2934 87.2414 84.649 85.8967C86.0046 84.5519 86.7671 82.7286 86.7692 80.8268V52.1338C88.6863 52.1317 90.5242 51.3753 91.8798 50.0305C93.2353 48.6857 93.9978 46.8624 94 44.9606V30.6141C93.9978 28.7123 93.2353 26.889 91.8798 25.5443C90.5242 24.1995 88.6863 23.443 86.7692 23.4409ZM54.6691 9.27467C56.0252 7.92939 57.8644 7.17362 59.7822 7.17362C61.7 7.17362 63.5392 7.92939 64.8953 9.27467C66.2513 10.6199 67.0131 12.4445 67.0131 14.347C67.0131 16.2495 66.2513 18.0741 64.8953 19.4194C62.6628 21.6341 56.2066 22.8783 50.7695 23.288C51.1825 17.8938 52.4362 11.4899 54.6691 9.27467ZM29.1043 9.27467C30.4615 7.93154 32.3003 7.17725 34.2174 7.17725C36.1344 7.17725 37.9732 7.93154 39.3304 9.27467C41.5638 11.4899 42.8175 17.8942 43.2305 23.288C37.793 22.8783 31.3377 21.6341 29.1047 19.419C27.751 18.0726 26.9907 16.2485 26.9907 14.3468C26.9907 12.4451 27.7505 10.6211 29.1043 9.27467ZM7.23077 30.6141H43.3846V44.9606H7.23077V30.6141ZM14.4615 52.1338H43.3846V80.8268H14.4615V52.1338ZM79.5385 80.8268H50.6154V52.1338H79.5385V80.8268ZM86.7692 44.9606H50.6154V30.6141H86.7692L86.7738 44.9606H86.7692Z"
+            fill="#E7C7C8"
+          />
+        </svg>
+      </figure>
+      <p>
+        Liverpool- Boda Israel y Jessica <br /><br />
+        # Evento- 50755093 <br />
+      </p>
+      <a class="btn-submit link" href="">ver mesa</a>
+    </div>
+    <div class="check-list container">
+      <!--  -->
+      <div class="guests">
+        <figure class="avg-container-guests">
+          <svg
+            width="130"
+            height="130"
+            viewBox="0 0 130 130"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="65" cy="65" r="65" fill="#AA7474" />
+            <path
+              d="M94.7388 99.9872C97.0541 101.108 98.8549 102.575 100.141 104.386C101.427 106.197 102.328 108.094 102.842 110.078C103.357 112.061 103.7 113.916 103.871 115.64C104.043 117.365 104.043 118.702 103.871 119.651C103.7 120.599 103.357 121.289 102.842 121.721C101.642 122.756 100.184 123.661 98.469 124.437C96.754 125.213 94.8674 125.903 92.8094 126.507C90.7513 127.111 88.6504 127.585 86.5066 127.93L80.2038 128.965C75.4017 129.569 70.3423 129.914 65.0257 130C59.6233 129.914 54.5211 129.569 49.719 128.965C47.6609 128.706 45.56 128.361 43.4162 127.93C41.2724 127.499 39.2144 127.025 37.2421 126.507C35.2698 125.99 33.3832 125.3 31.5825 124.437C29.7817 123.575 28.281 122.669 27.0805 121.721C26.566 121.289 26.2444 120.621 26.1158 119.715C25.9871 118.81 25.9657 117.452 26.0515 115.64C26.1372 113.829 26.4802 111.975 27.0805 110.078C27.6807 108.18 28.5811 106.283 29.7817 104.386C30.9822 102.488 32.783 101.022 35.184 99.9872L43.159 96.365C45.6458 95.2438 47.8753 94.0364 49.8476 92.7427C51.8199 91.4491 53.3206 89.9398 54.3496 88.2149C55.3786 86.4901 55.936 84.4202 56.0218 82.0054V81.2292C54.564 80.0218 53.4921 78.5988 52.8061 76.9601L49.8476 69.9744C48.3041 68.2495 47.1464 66.654 46.3747 65.1879C45.6887 63.9805 45.3456 62.8593 45.3456 61.8244C45.3456 60.7894 46.0745 60.272 47.5323 60.272C47.0178 56.9947 46.8892 54.0624 47.1464 51.4751C47.3179 49.319 47.8325 47.3354 48.69 45.5243C49.5475 43.7132 51.091 42.8076 53.3206 42.8076C53.7493 41.169 54.4782 39.7029 55.5073 38.4092C56.4505 37.288 57.7797 36.2531 59.4947 35.3044C61.2098 34.3558 63.4822 33.9245 66.312 34.0108C68.8846 34.0108 70.9855 34.5714 72.6148 35.6925C74.2441 36.8137 75.659 38.1074 76.8595 39.5735C78.06 41.0396 79.0462 42.4627 79.8179 43.8426C80.5897 45.2225 81.4472 46.2143 82.3905 46.818C82.7335 46.9905 83.0336 47.2061 83.2909 47.4648C83.5481 47.7235 83.5481 48.0685 83.2909 48.4997C82.9479 49.7071 82.6049 51.4751 82.2619 53.8037C81.9189 56.1323 81.9617 58.2884 82.3905 60.272C83.934 60.3582 84.6629 60.8757 84.5772 61.8244C84.4914 62.7731 84.0627 63.8942 83.2909 65.1879C82.4334 66.654 81.2328 68.2495 79.6893 69.9744C79.089 71.5268 78.6174 72.8636 78.2744 73.9847C77.9314 75.1059 77.5455 76.1408 77.1167 77.0895C76.688 78.0382 76.2592 78.7713 75.8305 79.2887C75.4017 79.8062 74.7586 80.453 73.9011 81.2292V82.0054C73.9011 84.5065 74.4584 86.5763 75.5732 88.2149C76.688 89.8536 78.2315 91.3628 80.2038 92.7427C82.1761 94.1226 84.3628 95.33 86.7638 96.365C89.1649 97.3999 91.8232 98.6073 94.7388 99.9872Z"
+              fill="white"
+            />
+          </svg>
+        </figure>
+        <p class="number-checklist">200</p>
+        <p class="paragraph-checklist">#invitados</p>
       </div>
+      <div class="guests">
+        <figure class="avg-container-guests">
+          <svg
+            width="130"
+            height="130"
+            viewBox="0 0 130 130"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="65" cy="65" r="65" fill="#CB9797" />
+            <path
+              d="M23.3113 64.0103C23.6058 62.4105 22.7915 60.9786 21.0735 61.1141C18.7432 61.2983 17.1217 66.0474 22.0792 67.6277C26.1435 68.9235 29.1025 65.9239 33.7851 61.2956C44.2476 50.9544 56.881 49.9514 64.5854 60.3908C67.7608 54.6694 80.2779 45.132 99.3904 64.9153C106.411 72.1827 112.685 65.3482 109.248 61.5975C107.684 59.8912 104.629 62.274 106.167 64.0103H105.859C98.686 57.7814 113.67 51.961 116.639 62.5023C119.707 78.369 102.613 80.9483 88.9189 75.1682C62.4521 62.1989 62.1698 65.683 36.5553 76.3748C28.6942 79.53 19.0668 77.7272 15.1806 74.0789C10.5649 69.746 10.8504 59.4493 16.8423 57.3746C22.9578 54.9726 28.1315 60.1149 23.3113 64.0103Z"
+              fill="white"
+            />
+          </svg>
+        </figure>
+        <p class="number-checklist">200</p>
+        <p class="paragraph-checklist">confirmados novio</p>
+      </div>
+      <div class="guests">
+        <figure class="avg-container-guests">
+          <svg
+            width="130"
+            height="130"
+            viewBox="0 0 130 130"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="65" cy="65" r="65" fill="#E7C7C8" />
+            <path
+              d="M82.5429 67.8578C78.6319 59.1195 74.8471 53.5418 74.8471 53.5418V53.5352H53.5524C52.2841 56.0185 50.1593 60.0491 47.1049 65.6732C43.3931 72.5125 35 94.5243 35 94.5243C35 94.5243 35.4914 97.4327 42.6361 98.7408C47.3771 99.6106 48.8047 98.867 52.7688 101.018C56.2682 102.917 58.6918 104.69 64.6214 104.69C70.551 104.69 72.045 103.223 76.8723 101.018C80.9825 99.1392 83.2003 100.056 87.9214 99.0861C97.928 97.0343 98.5854 89.7169 98.5854 89.7169C98.5854 89.7169 90.936 86.6027 82.5429 67.8578V67.8578Z"
+              fill="white"
+            />
+            <path
+              d="M77.7818 26.8616C77.7951 26.3238 77.4432 25.8457 76.9319 25.6996L74.6344 25.0489C73.9571 24.8563 73.2732 25.2946 73.1603 25.9918L72.0249 32.9971C72.0249 32.9971 68.5056 33.6013 64.6079 36.7753L64.3489 36.7686C60.4512 33.5947 56.8523 32.9971 56.8523 32.9971L55.7102 25.9851C55.6833 25.8224 55.6224 25.6671 55.5316 25.5293C55.4408 25.3916 55.322 25.2744 55.1831 25.1855C55.0441 25.0966 54.8879 25.0379 54.7248 25.0132C54.5617 24.9886 54.3952 24.9984 54.2361 25.0423L51.9386 25.693C51.4207 25.8391 51.0688 26.3172 51.0887 26.855C51.1485 28.9997 51.3543 34.6106 51.9718 40.2945C52.6026 46.1112 53.6857 51.4084 53.4998 53.5C53.4998 53.5 59.1165 54.8695 64.2759 54.9226V54.9292H64.6212V54.9226C69.7739 54.8761 75.1191 54.1391 75.1191 54.1391C74.9332 52.0475 76.2944 46.1112 76.9252 40.2945C77.5162 34.6106 77.722 29.0064 77.7818 26.8616Z"
+              fill="white"
+            />
+            <path
+              d="M49.2695 99.4112C51.7463 80.6662 58.2602 64.3184 58.2602 64.3184C58.2602 64.3184 56.0823 83.5879 55.5975 102.559C55.5975 102.559 53.7051 101.363 51.972 100.6C50.239 99.8361 49.2695 99.4112 49.2695 99.4112Z"
+              fill="url(#paint0_linear_323_117)"
+            />
+            <path
+              d="M74.4022 102.2C72.7754 92.1667 71.7993 82.18 72.2707 74.0791C72.2707 74.0791 75.956 89.3446 81.2481 99.7961C81.2481 99.7961 79.4486 100.055 77.7289 100.653C76.527 101.071 74.4022 102.2 74.4022 102.2V102.2Z"
+              fill="url(#paint1_linear_323_117)"
+            />
+            <defs>
+              <linearGradient
+                id="paint0_linear_323_117"
+                x1="52.4747"
+                y1="100.673"
+                x2="57.1945"
+                y2="65.4698"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop offset="0.297" stop-color="#F8F8F8" />
+                <stop offset="1" stop-color="#F3F3F3" stop-opacity="0.2" />
+              </linearGradient>
+              <linearGradient
+                id="paint1_linear_323_117"
+                x1="77.9407"
+                y1="102.11"
+                x2="74.1007"
+                y2="74.0791"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop offset="0.297" stop-color="#F9F9F9" />
+                <stop offset="1" stop-color="#CECECE" stop-opacity="0.2" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </figure>
+        <p class="number-checklist">200</p>
+        <p class="paragraph-checklist">confirmados novia</p>
+      </div>
+      <div class="guests">
+        <figure class="avg-container-guests">
+          <svg
+            width="130"
+            height="130"
+            viewBox="0 0 130 130"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="65" cy="65" r="65" fill="#EFDBDA" />
+            <path
+              d="M65 102C85.4345 102 102 85.4345 102 65C102 44.5655 85.4345 28 65 28C44.5655 28 28 44.5655 28 65C28 85.4345 44.5655 102 65 102Z"
+              stroke="white"
+              stroke-width="5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M76.1 79.7998L67.1682 70.868C65.7803 69.4806 65.0004 67.5986 65 65.6362V42.7998"
+              stroke="white"
+              stroke-width="5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </figure>
+        <p class="number-checklist">200</p>
+        <p class="paragraph-checklist">pendientes</p>
+      </div>
+      <!--  -->
+      <h2 class="title bottom-title">te esperamos</h2>
     </div>
 
     <script src="./main.js"></script>

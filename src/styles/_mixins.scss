@@ -139,3 +139,7 @@ $breakpoints: (
     }
   }
 }
+
+@function rem($pixelValue, $remBase: 16) {
+  @return $pixelValue / $remBase * 1rem;
+}

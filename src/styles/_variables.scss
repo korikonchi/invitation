@@ -3,6 +3,7 @@ $secondary: rgb(203, 151, 151);
 $tertiary: rgb(231, 199, 200);
 $quaternary: rgb(239, 219, 218);
 $whiteback: rgb(255, 255, 255);
+$colorfont: rgb(170, 116, 116);
 
 $white: #fff !default;
 $gray100: #f8f9fa !default;
@@ -21,3 +22,7 @@ $black: #020204 !default;
 $font-color: $gray600;
 $background-color: $gray100;
 $font-family: 'Bellota Text', serif;
+
+:root {
+  --sectionPadding: 1rem;
+}
