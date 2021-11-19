@@ -6,7 +6,7 @@
   "license": "MIT",
   "source": "src/index.html",
   "scripts": {
-    "dev": "yarn parcel serve --open",
+    "dev": "yarn parcel serve --open --no-cache",
     "build": "yarn parcel build"
   },
   "devDependencies": {
