@@ -1,4 +1,10 @@
 // Globals
+
+body {
+  max-width: 1400px;
+  margin: auto;
+}
+
 .title {
   font-family: 'Dancing Script';
   text-transform: capitalize;
@@ -54,7 +60,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  // border: 1px solid red !important;
 }
 .list-recipe {
   text-align: center;
@@ -145,7 +150,12 @@
   max-width: 100vw;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+
+  @include media(md) {
+    height: auto;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 .card-profile {
@@ -171,7 +181,6 @@
 .our-history {
   text-align: center;
   height: 60%;
-  border: 1px solid red !important;
 }
 
 .heart-history {
@@ -180,11 +189,6 @@
   fill: $quaternary;
 
   margin-bottom: 3rem;
-}
-.picture-container {
-  height: 60vh;
-  width: 100vw;
-  margin-bottom: 1rem;
 }
 .sec-5 {
   text-align: center;
@@ -203,14 +207,12 @@
   margin: 0 auto 3rem;
 }
 .sec-confirm {
-  border: 1px solid red !important;
-  height: 100vh;
   text-align: center;
 }
 .container {
   margin: 0 auto 5rem;
   padding: 0 var(--sectionPadding);
-  border: 2px solid #f0c !important;
+  max-width: rem(1000);
 
   @include media(xs) {
     --sectionPadding: 2rem;
@@ -248,8 +250,42 @@ form {
   }
 }
 .radio {
-  display: flex;
-  justify-content: space-evenly;
+  padding: 2rem;
+
+  &-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+
+      &:checked ~ .checkmark {
+        border-color: $secondary;
+        background-color: transparent;
+      }
+    }
+
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background-color: #eee;
+      border: 7px solid transparent;
+    }
+  }
 }
 .family {
   display: flex;
@@ -274,8 +310,12 @@ p {
   font-size: 0.8rem;
   text-align: center;
 }
-.bottom-title {
+.top-margin {
   margin-top: 4rem;
+
+  @include media(md) {
+    margin-top: 6rem;
+  }
 }
 .bottom-sec {
   margin-bottom: 3rem;
@@ -285,10 +325,23 @@ p {
   text-transform: uppercase;
   text-align: center;
 }
+
+.guests {
+  margin-bottom: 2rem;
+  p {
+    font-size: 1.2rem;
+  }
+}
+
 .avg-container-guests {
   width: 5rem;
   height: 5rem;
   margin: 0 auto 1rem;
+
+  @include media(md) {
+    width: 7rem;
+    height: 7rem;
+  }
 }
 .number-checklist {
   color: $colorfont;
@@ -377,4 +430,120 @@ p {
   transform: translatey(-0.2rem);
   /* add shadow at button x,y,intensity and color */
   box-shadow: 1rem 1rem 1rem $quaternary;
+}
+
+.check-list {
+  &-icons {
+    @include media(md) {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 3rem;
+    }
+  }
+}
+
+.gallery {
+  margin-bottom: 4rem;
+  @include media(0, md) {
+    &-item {
+      height: 60vh;
+      width: 100vw;
+      margin-bottom: 1rem;
+      &-10 {
+        display: none;
+      }
+    }
+  }
+
+  @include media(md) {
+    background-color: rgb(243, 243, 243);
+    grid-column: full-start / full-end;
+
+    display: grid;
+    grid-template: repeat(8, 4.5vw) / repeat(10, 1fr);
+
+    grid-gap: 1rem;
+    padding: 1rem;
+
+    &-item {
+      border-radius: 4px;
+      overflow: hidden;
+
+      &-1 {
+        grid-row: 1 / span 3;
+        grid-column: 1 / span 3;
+      }
+
+      &-2 {
+        grid-row: 4 / -1;
+        grid-column: 1 / span 2;
+      }
+
+      &-3 {
+        grid-row: 1 / span 4;
+        grid-column: 6 / 8;
+      }
+
+      &-4 {
+        grid-row: 1 / span 5;
+        grid-column: 8 / -1;
+      }
+
+      &-5 {
+        grid-row: 6 / span 3;
+        grid-column: 3 / span 3;
+      }
+
+      &-6 {
+        grid-row: 4 / span 2;
+        grid-column: 3 / span 2;
+      }
+
+      &-7 {
+        grid-row: 5 / span 4;
+        grid-column: 6 / span 2;
+      }
+
+      &-8 {
+        grid-row: 6 / -1;
+        grid-column: 8 / -1;
+      }
+      &-9 {
+        grid-row: 1 / 4;
+        grid-column: 4 / 6;
+      }
+      &-10 {
+        grid-row: 4 / 6;
+        grid-column: 5 / 6;
+      }
+    }
+  }
+}
+
+.desktop-view {
+  @include media(lg) {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    > * {
+      max-width: rem(380);
+      flex-basis: 50%;
+      padding: 0;
+    }
+  }
+}
+
+.desktop-views {
+  @include media(lg) {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    > * {
+    }
+  }
 }

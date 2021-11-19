@@ -141,5 +141,5 @@ $breakpoints: (
 }
 
 @function rem($pixelValue, $remBase: 16) {
-  @return $pixelValue / $remBase * 1rem;
+  @return calc(math.div($pixelValue, $remBase) * 1rem);
 }

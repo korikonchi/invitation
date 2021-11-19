@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -14,7 +14,7 @@
     <title>Solo Faltas Tu!</title>
   </head>
   <body>
-    <div class="sec-1">
+    <div class="sec-1 ">
       <img
         src="https://assets.digitalvilla.ca/images/issra-jess/hero.jpg"
         alt=""
@@ -28,7 +28,7 @@
       <span class="box-text--sub animated-up">-- nos casamos --</span>
     </div>
     <!-- section 2 -->
-    <div class="sec-2 container">
+    <div class="sec-2 container ">
       <h2 class="title">receta para nuestra boda</h2>
       <ul class="list-recipe">
         <li>
@@ -187,7 +187,7 @@
       </div>
     </div>
     <!-- section 3 -->
-    <div class="sec-3 container">
+    <div class="sec-3 container ">
       <div class="card-profile">
         <h2 class="title card-profile-title">Él</h2>
         <figure class="card-profile-image">
@@ -220,7 +220,7 @@
     </div>
 
     <div class="sec-4">
-      <div class="our-history container">
+      <div class="our-history container ">
         <h2 class="title">Nuestra historia</h2>
         <p class="message">
           El plan de Dios para nosotros ya estba trazado... nuestras vidas se
@@ -247,64 +247,74 @@
           </svg>
         </figure>
       </div>
-      <figure class="picture-container">
+
+      <section class="gallery">
+      <figure class="gallery-item gallery-item-1">
         <img
           src="https://assets.digitalvilla.ca/images/issra-jess/i&j-001.jpg"
           alt=""
         />
       </figure>
-      <figure class="picture-container">
+      <figure class="gallery-item gallery-item-2">
         <img
           src="https://assets.digitalvilla.ca/images/issra-jess/i&j-002.jpg"
           alt=""
         />
       </figure>
-      <figure class="picture-container">
+      <figure class="gallery-item gallery-item-3">
         <img
           src="https://assets.digitalvilla.ca/images/issra-jess/i&j-003.jpg"
           alt=""
         />
       </figure>
-      <figure class="picture-container">
+      <figure class="gallery-item gallery-item-4">
         <img
           src="https://assets.digitalvilla.ca/images/issra-jess/i&j-004.jpg"
           alt=""
         />
       </figure>
-      <figure class="picture-container">
+      <figure class="gallery-item gallery-item-5">
         <img
           src="https://assets.digitalvilla.ca/images/issra-jess/i&j-005.jpg"
           alt=""
         />
       </figure>
-      <figure class="picture-container">
+      <figure class="gallery-item gallery-item-6">
         <img
           src="https://assets.digitalvilla.ca/images/issra-jess/i&j-006.jpg"
           alt=""
         />
       </figure>
-      <figure class="picture-container">
+      <figure class="gallery-item gallery-item-7">
         <img
           src="https://assets.digitalvilla.ca/images/issra-jess/i&j-007.jpg"
           alt=""
         />
       </figure>
-      <figure class="picture-container">
+      <figure class="gallery-item gallery-item-8">
         <img
           src="https://assets.digitalvilla.ca/images/issra-jess/i&j-008.jpg"
           alt=""
         />
       </figure>
-      <figure class="picture-container">
+      <figure class="gallery-item gallery-item-9">
         <img
           src="https://assets.digitalvilla.ca/images/issra-jess/i&j-009.jpg"
           alt=""
         />
       </figure>
+      <figure class="gallery-item gallery-item-10">
+        <img
+          src="https://assets.digitalvilla.ca/images/issra-jess/hero.jpg"
+          alt=""
+        />
+      </figure>
+    </section>
     </div>
     <!-- section5 -->
+    <div class="desktop-view">
     <div class="sec-5 container bottom-sec">
-      <h2 class="title bottom-title">Mensaje de amor para los novios</h2>
+      <h2 class="title">Mensaje de amor para los novios</h2>
       <p class="">
         compartir contigo este gran dia hara que sea inolvidable! <br />
         <br />
@@ -314,14 +324,13 @@
 
       <form class="form-wishes">
         <label for="textarea" class="hidden">deseos</label>
-        <textarea class="textarea" name="deseos" id="textarea">
-          Mandandanos tus deseos...
+        <textarea class="textarea" name="deseos" id="textarea" placeholder="Mandandanos tus deseos...">
   </textarea
         >
         <input class="btn-submit btn" type="submit" value="ENVIAR" />
       </form>
     </div>
-    <div class="container">
+    <div class="sec-ceremonia container">
       <h2 class="title">Ceremonia y Recepcion</h2>
       <figure class="avg-container">
         <svg
@@ -353,6 +362,7 @@
       </p>
       <a class="btn-submit link btn" href="">ubicacion</a>
     </div>
+    
     <div class="sec-confirm container">
       <h2 class="title">confirmar asistencia</h2>
       <form class="form-dates">
@@ -372,13 +382,6 @@
           placeholder="Apellidos"
         />
 
-        <label for="dates-input-invitados" class="hidden">#invitados</label>
-        <input
-          id="dates-input-invitados"
-          class="dates-inputs"
-          type="text"
-          placeholder="# invitados"
-        />
 
         <input
           class="dates-inputs"
@@ -389,26 +392,17 @@
           value="1"
         />
         <!--  -->
+
         <div class="radio">
           <p class="family">familia</p>
-          <div class>
-            <div>
-              <input
-                type="radio"
-                id="novio"
-                name="drone"
-                value="novio"
-                checked
-              />
-              <label for="novio">novio</label>
-            </div>
-
-            <!-- <p>familia</p> -->
-            <div>
-              <input type="radio" id="novia" name="drone" value="novia" />
-              <label for="novia">novia</label>
-            </div>
-          </div>
+          <label class="radio-container">Novia
+            <input type="radio" checked="checked" name="familia">
+            <span class="checkmark"></span>
+          </label>
+          <label class="radio-container">Novio
+            <input type="radio" name="familia" > 
+            <span class="checkmark"></span>
+          </label>
         </div>
         <!--  -->
         <input type="submit" class="btn-submit btn" value="ENVIAR" />
@@ -437,8 +431,12 @@
       </p>
       <a class="btn-submit link btn" href="">ver mesa</a>
     </div>
+
+  </div>
+
     <div class="check-list container">
       <!--  -->
+      <div class="check-list-icons">
       <div class="guests">
         <figure class="avg-container-guests">
           <svg
@@ -562,7 +560,8 @@
         <p class="paragraph-checklist">pendientes</p>
       </div>
       <!--  -->
-      <h2 class="title bottom-title">te esperamos</h2>
+    </div>
+      <h2 class="title top-margin">te esperamos</h2>
     </div>
 
     <script src="./main.js"></script>
