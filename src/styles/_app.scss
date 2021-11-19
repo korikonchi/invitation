@@ -20,16 +20,20 @@
   right: 0;
   background-color: rgba(255, 255, 255, 0.308);
   height: 9rem;
+  color: white;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: white;
   text-align: center;
-  font-size: 3.2rem;
   font-weight: 300;
   text-transform: uppercase;
-  margin-bottom: 4rem;
+  margin-bottom: 1rem;
   font-family: 'Alice';
+  // padding: 1rem;
+}
+.box-text--main {
+  font-size: 2.5rem;
 }
 
 .box-text--sub {
@@ -297,7 +301,6 @@ p {
   }
   60% {
     opacity: 0.6;
-    transform: translateX(5rem);
   }
   100% {
     opacity: 1;
@@ -311,7 +314,6 @@ p {
   }
   60% {
     opacity: 0.6;
-    transform: translateX(-5rem);
   }
   100% {
     opacity: 1;
@@ -319,15 +321,15 @@ p {
   }
 }
 .animated-israel {
-  animation: MOVEINLEFT 6s ease-out;
+  animation: MOVEINLEFT 3s ease-out;
   animation-fill-mode: backwards;
 }
 .animated-and {
-  animation: MOVEINDOWN 6s ease-out;
+  animation: MOVEINDOWN 3s ease-out;
   animation-fill-mode: backwards;
 }
 .animated-jessica {
-  animation: MOVEINRIGHT 6s ease-out;
+  animation: MOVEINRIGHT 3s ease-out;
   animation-fill-mode: backwards;
 }
 
@@ -349,8 +351,9 @@ p {
     opacity: 0;
     transform: translateY(-14rem);
   }
-  60% {
-    opacity: 0.6;
+  94% {
+    opacity: 0;
+    transform: translateY(0rem);
   }
   100% {
     opacity: 1;
@@ -359,7 +362,7 @@ p {
 }
 
 .animated-up {
-  animation: MOVEINUP 5s ease-out 0.4s;
+  animation: MOVEINUP 3s ease-out 0.4s;
   animation-fill-mode: backwards;
 }
 
@@ -374,12 +377,4 @@ p {
   transform: translatey(-0.2rem);
   /* add shadow at button x,y,intensity and color */
   box-shadow: 1rem 1rem 1rem $quaternary;
-}
-input[type='number']::-webkit-inner-spin-button,
-input[type='number']::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-input[type='number'] {
-  -moz-appearance: textfield;
 }
