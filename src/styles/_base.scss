@@ -51,6 +51,7 @@ button {
   appearance: none;
   border-radius: 0;
   -webkit-appearance: none;
+  -moz-appearance: textfield;
   text-decoration: none;
 
   &:disabled {

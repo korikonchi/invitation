@@ -363,15 +363,20 @@
           </svg>
         </figure>
         <p>
-          12 de febrero-jardin <strong>El Lago de los Sueños.</strong>
+          12 de febrero jardin <strong> El Lago de los Sueños.</strong>
           <br /><br />
-          Camino antiguo a santa ines s/n col.Cuatlixco,
+          Camino antiguo a santa Ines s/n col.Cuatlixco,
           <strong>Cuautla, Morelos.</strong> <br />
           <br />
           Recepcion 3:30 pm <br />
           ceremonia 4:00 pm
         </p>
-        <a class="btn-submit link btn" href="">ubicacion</a>
+        <a
+          class="btn-submit link btn"
+          target="_blank"
+          href="https://www.google.com/maps/dir/?api=1&destination=18.831672750593%2C-98.951060468356&fbclid=IwAR0qCU2lI1ZA-5xQPykIqtoGYs0m1-7TQxXDyypzF8zyO6RdXAudEDEtRI4"
+          >ubicacion</a
+        >
       </div>
 
       <div class="sec-confirm container">
@@ -382,37 +387,65 @@
             id="dates-input-nombre"
             class="dates-inputs"
             type="text"
-            name="nombre"
+            name="name"
+            required
             placeholder="Nombre Completo"
           />
-          <label for="dates-input-apellido" class="hidden">apellidos</label>
+          <label for="dates-input-correo" class="hidden"
+            >Correo Electronico</label
+          >
           <input
-            id="dates-input-apellido"
+            id="dates-input-correo"
             class="dates-inputs"
-            type="text"
-            placeholder="Apellidos"
+            type="email"
+            name="email"
+            required
+            placeholder="Correo Electronico"
           />
 
-          <input
+
+          <div class="input-number-wrapper">
+            <input
+            placeholder="Numero de invitados"
             class="dates-inputs"
             type="number"
+            required
+            name="number"
             min="1"
-            max="9"
+            max="10"
             step="1"
-            value="1"
-          />
+            />
+
+          <button
+            type='button'
+            aria-label='decrease'
+            data-math='minus'
+            class='number-minus'
+          ><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="minus-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path  d="M140 284c-6.6 0-12-5.4-12-12v-32c0-6.6 5.4-12 12-12h232c6.6 0 12 5.4 12 12v32c0 6.6-5.4 12-12 12H140zm364-28c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zm-48 0c0-110.5-89.5-200-200-200S56 145.5 56 256s89.5 200 200 200 200-89.5 200-200z"/></svg></button>
+          <button
+            type='button'
+            data-math='plus'
+            aria-label='increase'
+            class='number-plus'
+          ><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="plus-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path  d="M384 240v32c0 6.6-5.4 12-12 12h-88v88c0 6.6-5.4 12-12 12h-32c-6.6 0-12-5.4-12-12v-88h-88c-6.6 0-12-5.4-12-12v-32c0-6.6 5.4-12 12-12h88v-88c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v88h88c6.6 0 12 5.4 12 12zm120 16c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zm-48 0c0-110.5-89.5-200-200-200S56 145.5 56 256s89.5 200 200 200 200-89.5 200-200z"/></svg></button>
+          </div>
           <!--  -->
 
           <div class="radio">
-            <p class="family">Familia:</p>
+            <p class="family">Invitado de:</p>
             <label class="radio-container"
               >Novia
-              <input type="radio" checked="checked" name="familia" />
+              <input
+                type="radio"
+                checked="checked"
+                name="family"
+                value="Novia"
+              />
               <span class="checkmark"></span>
             </label>
             <label class="radio-container"
               >Novio
-              <input type="radio" name="familia" />
+              <input type="radio" name="family" value="Novio" />
               <span class="checkmark"></span>
             </label>
           </div>
@@ -442,6 +475,7 @@
           # Evento- 50755093 <br />
         </p>
         <a
+          target="_blank"
           class="btn-submit link btn"
           href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/50755093"
           >ver mesa</a
@@ -579,6 +613,19 @@
       <h2 class="title top-margin">te esperamos</h2>
     </div>
 
-    <script src="./main.js"></script>
+    <div
+      class="quantum-loader-page gradient hidden"
+      aria-label="loading..."
+      aria-hidden="true"
+    >
+      <div class="quantum-loader-wrapper">
+        <div class="point-a"></div>
+        <div class="point-b"></div>
+        <div class="point-c"></div>
+        <div class="point-d"></div>
+      </div>
+    </div>
+
+    <script type="module" src="./js/main.js"></script>
   </body>
 </html>
