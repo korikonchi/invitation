@@ -1,0 +1,132 @@
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: rem(500);
+  margin: 0 auto;
+
+  .placeholder {
+    color: $colorfont;
+    font-size: 1.05rem;
+  }
+
+  .dates-inputs {
+    margin-bottom: 1rem;
+  }
+  .dates-inputs,
+  .textarea {
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+      rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    border: 0.1rem solid $whiteback;
+    background-color: $whiteback;
+    border-radius: 2rem;
+    padding: 1rem;
+    resize: none;
+    color: $gray600;
+
+    &:disabled {
+      cursor: not-allowed !important;
+    }
+  }
+
+  .textarea {
+    height: 8rem;
+  }
+
+  .input-number {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+
+    &-controller {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    input[type='number'] {
+      margin: 0;
+      font-size: 1.2rem;
+      padding: 0;
+      width: 1.2rem;
+      border-radius: 30px;
+      text-align: center;
+      border: none;
+      box-shadow: none;
+    }
+
+    button {
+      --size: 1.6rem;
+
+      border: none;
+      background: none;
+      height: var(--size);
+      width: var(--size);
+      cursor: pointer;
+
+      &.number-minus {
+        margin-right: 0.5rem;
+      }
+      &.number-plus {
+        margin-left: 0.5rem;
+      }
+
+      svg {
+        fill: $secondary;
+      }
+    }
+  }
+
+  .radio {
+    display: flex;
+    justify-items: center;
+    justify-content: space-between;
+    padding: 1rem 1rem 0;
+
+    @include media(md) {
+      flex-direction: row;
+    }
+
+    .placeholder {
+      display: flex;
+      align-items: center;
+    }
+
+    &-buttons {
+      display: flex;
+    }
+
+    &-container {
+      padding-left: rem(10);
+      margin-left: rem(10);
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      display: flex;
+      align-items: center;
+      font-size: 1.2rem;
+
+      input {
+        opacity: 0;
+        cursor: pointer;
+
+        &:checked ~ .checkmark {
+          border-color: $secondary;
+          background-color: transparent;
+        }
+      }
+
+      .checkmark {
+        width: rem(20);
+        height: rem(20);
+        border-radius: 50%;
+        background-color: #eee7e7;
+        border: rem(5) solid transparent;
+        margin-left: 0.3rem;
+      }
+    }
+  }
+}

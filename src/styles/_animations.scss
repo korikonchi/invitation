@@ -1,0 +1,104 @@
+@keyframes MOVEINUP {
+  0% {
+    opacity: 0;
+    transform: translateY(14rem);
+  }
+  60% {
+    opacity: 0;
+    transform: translateY(14rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
+}
+
+@keyframes MOVEINDOWN {
+  0% {
+    opacity: 0;
+    transform: translateY(-14rem);
+  }
+  94% {
+    opacity: 0;
+    transform: translateY(0rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
+}
+
+@keyframes MOVEINLEFT {
+  0% {
+    opacity: 0;
+    transform: translateX(-14rem);
+  }
+  60% {
+    opacity: 0;
+    transform: translateX(-14rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0rem);
+  }
+}
+
+@keyframes MOVEINRIGHT {
+  0% {
+    opacity: 0;
+    transform: translateX(14rem);
+  }
+  60% {
+    opacity: 0;
+    transform: translateX(14rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0rem);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  50%,
+  100% {
+    transform: scale(1);
+    filter: blur(0px);
+  }
+  25% {
+    transform: scale(0.6);
+    filter: blur(2px);
+  }
+  75% {
+    filter: blur(2px);
+    transform: scale(1.4);
+  }
+}
+
+@keyframes FadeIn {
+  0%,
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animated-israel {
+  animation: MOVEINLEFT 3s ease-out;
+  animation-fill-mode: backwards;
+}
+.animated-and {
+  animation: MOVEINDOWN 3s ease-out;
+  animation-fill-mode: backwards;
+}
+.animated-jessica {
+  animation: MOVEINRIGHT 3s ease-out;
+  animation-fill-mode: backwards;
+}
+
+.animated-up {
+  animation: MOVEINUP 3s ease-out 0.4s;
+  animation-fill-mode: backwards;
+}

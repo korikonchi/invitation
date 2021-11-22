@@ -1,0 +1,82 @@
+.counter {
+  display: flex;
+  justify-content: space-around;
+  text-transform: uppercase;
+  color: $gray600;
+  margin: 3rem 0 0;
+
+  @include media(md) {
+    margin: 4rem 2rem;
+  }
+
+  @include media(lg) {
+    justify-content: center;
+
+    &-item {
+      margin: 0 1.5rem;
+    }
+  }
+
+  &-item {
+    text-align: center;
+    max-width: 6.25rem;
+    flex-basis: 25%;
+    flex: 1;
+  }
+  &-time {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: $whiteback;
+    font-size: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: 1px 1px 2px rgba($primary, 0.4);
+    @include media(md) {
+      font-size: 1.8rem;
+    }
+  }
+
+  &-text {
+    color: $gray600;
+    font-size: 0.7rem;
+    width: 100%;
+    font-family: 'Bellota Text';
+    font-weight: 100;
+
+    @include media(md) {
+      font-size: 1rem;
+      text-decoration-style: wavy;
+    }
+  }
+
+  .circle {
+    position: relative;
+    margin-bottom: 0.5rem;
+    svg {
+      box-shadow: $box-shadow2;
+      border-radius: 50%;
+    }
+
+    &.color--primary {
+      svg {
+        fill: $primary;
+      }
+    }
+    &.color--secondary {
+      svg {
+        fill: $secondary;
+      }
+    }
+    &.color--tertiary {
+      svg {
+        fill: $tertiary;
+      }
+    }
+    &.color--quaternary {
+      svg {
+        fill: $quaternary;
+      }
+    }
+  }
+}

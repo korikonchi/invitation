@@ -1,60 +1,56 @@
-// Globals
-.title {
-  font-family: 'Dancing Script';
-  text-transform: capitalize;
-  text-align: center;
-  color: $primary;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-}
-
 .sec-1 {
   height: 100%;
   position: relative;
-}
+  min-height: rem(560);
 
-.box-text {
-  position: absolute;
-  top: 55%;
-  left: 0;
-  right: 0;
-  background-color: rgba(255, 255, 255, 0.308);
-  height: 9rem;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-weight: 300;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-  font-family: 'Alice';
-  text-shadow: 2px 2px 3px #0004;
-
-  &--main {
-    font-size: 2.5rem;
+  img {
+    animation: FadeIn 2s ease-out;
   }
 
-  &--sub {
+  .box-text {
     position: absolute;
-    top: 85%;
-    left: 0%;
-    right: 0%;
+    top: 55%;
+    left: 0;
+    right: 0;
+    animation: FadeIn 1s ease-out;
+    background-color: rgba(255, 255, 255, 0.308);
+    height: 9rem;
     color: white;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    font-weight: 300;
     text-transform: uppercase;
-    font-weight: 200;
+    margin-bottom: 1rem;
+    font-family: 'Alice';
     text-shadow: 2px 2px 3px #0004;
-  }
 
-  @include media(lg, 0, true) {
-    top: 50%;
+    &--main {
+      font-size: 2.5rem;
+    }
 
     &--sub {
-      top: 80%;
+      position: absolute;
+      top: 85%;
+      left: 0%;
+      right: 0%;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-transform: uppercase;
+      font-weight: 200;
+      text-shadow: 2px 2px 3px #0004;
+    }
+
+    @include media(lg, 0, true) {
+      top: 50%;
+
+      &--sub {
+        top: 80%;
+      }
     }
   }
 }
@@ -69,153 +65,69 @@
     justify-content: space-around;
     padding: 2rem 0;
   }
-}
 
-.list-container {
-  margin-bottom: 2rem;
-  p {
-    font-size: 1.1rem;
-  }
-}
-
-.list-recipe {
-  text-align: center;
-  list-style: none;
-  text-transform: capitalize;
-  color: $gray600;
-  // padding-bottom: 1rem;
-  font-size: 1.1rem;
-
-  li {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    .check {
-      margin-left: 0.2rem;
+  .list-container {
+    margin-bottom: 2rem;
+    p {
+      font-size: 1.1rem;
     }
   }
 
-  @include media(md) {
-    display: flex;
-    justify-content: space-around;
-    padding: 1rem 0 0;
-    flex-wrap: wrap;
-    max-width: 500px;
-    margin: 0 auto;
+  .list-recipe {
+    text-align: center;
+    list-style: none;
+    text-transform: capitalize;
+    color: $gray600;
+    // padding-bottom: 1rem;
+    font-size: 1.1rem;
 
     li {
-      flex-basis: 33%;
-      margin-bottom: 0.5rem;
-
-      &:nth-of-type(4) {
-        justify-content: flex-end;
-      }
-      &:nth-of-type(5) {
-        justify-content: flex-start;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .check {
+        margin-left: 0.2rem;
       }
     }
-  }
-}
-.list-recipe--text {
-  padding: 0.5rem;
-}
-.check {
-  height: 1rem 0 0;
-  width: 1rem;
-  fill: $secondary;
-}
-.paragraph-sec2 {
-  color: $gray600;
-  text-align: center;
-  text-transform: capitalize;
-  font-size: 1.2rem;
-  font-weight: bold;
-}
 
-.timer {
-  display: flex;
-  justify-content: space-around;
-  text-transform: uppercase;
-  color: $gray600;
-  margin: 3rem 0 0;
-
-  @include media(md) {
-    margin: 4rem 2rem;
-  }
-
-  @include media(lg) {
-    justify-content: center;
-
-    &-item {
-      margin: 0 1.5rem;
-    }
-  }
-
-  &-item {
-    text-align: center;
-    max-width: 6.25rem;
-    flex-basis: 25%;
-    flex: 1;
-    svg {
-      box-shadow: $box-shadow2;
-      border-radius: 50%;
-    }
-  }
-  &-time {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: $whiteback;
-    font-size: 1.5rem;
-    font-family: Arial, Helvetica, sans-serif;
-    text-shadow: 1px 1px 2px rgba($primary, 0.4);
     @include media(md) {
-      font-size: 1.8rem;
+      display: flex;
+      justify-content: space-around;
+      padding: 1rem 0 0;
+      flex-wrap: wrap;
+      max-width: 500px;
+      margin: 0 auto;
+
+      li {
+        flex-basis: 33%;
+        margin-bottom: 0.5rem;
+
+        &:nth-of-type(4) {
+          justify-content: flex-end;
+          flex-basis: 40%;
+        }
+        &:nth-of-type(5) {
+          flex-basis: 40%;
+
+          justify-content: flex-start;
+        }
+      }
     }
   }
-
-  &-text {
+  .list-recipe--text {
+    padding: 0.5rem;
+  }
+  .check {
+    height: 1rem 0 0;
+    fill: $secondary;
+    width: 1rem;
+  }
+  .paragraph-sec2 {
     color: $gray600;
-    font-size: 0.7rem;
-    width: 100%;
-    font-family: 'Bellota Text';
-    font-weight: 100;
-
-    @include media(md) {
-      font-size: 1rem;
-      text-decoration-style: wavy;
-    }
-  }
-}
-
-.circle {
-  border: 1px solid rgba(250, 250, 250, 0);
-  position: relative;
-  svg {
-    height: auto;
-    width: 100%;
-  }
-
-  &.color--primary {
-    svg {
-      fill: $primary;
-    }
-  }
-  &.color--secondary {
-    svg {
-      fill: $secondary;
-    }
-  }
-  &.color--tertiary {
-    svg {
-      fill: $tertiary;
-    }
-  }
-  &.color--quaternary {
-    svg {
-      fill: $quaternary;
-    }
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    font-weight: bold;
   }
 }
 
@@ -228,51 +140,43 @@
     flex-direction: row;
     justify-content: space-between;
   }
-}
 
-.card-profile {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.08rem;
+  .card-profile {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.08rem;
 
-  &-image {
-    height: 6rem;
-    width: 6rem;
-    overflow: hidden;
-    border-radius: 50%;
-    border: 2px solid $tertiary;
+    &-image {
+      height: 6rem;
+      width: 6rem;
+      overflow: hidden;
+      border-radius: 50%;
+      border: 2px solid $tertiary;
+    }
+    &-text {
+      padding: 1rem 0;
+    }
   }
-  &-text {
-    padding: 1rem 0;
-  }
 }
-
 .our-history {
   text-align: center;
   height: 60%;
-}
 
-.heart-history {
-  height: 1.2rem;
-  width: 1.2rem;
-  fill: $quaternary;
-
-  margin-bottom: 3rem;
+  .heart-history {
+    height: 1.8rem;
+    width: 1.8rem;
+    fill: $quaternary;
+    margin: 1rem 0 3rem;
+  }
 }
 .sec-5 {
   text-align: center;
   margin-bottom: 5rem;
 }
-.sec-reception {
-  text-align: center;
-  margin-top: 5rem;
-  margin-bottom: 5rem;
-  height: 100%;
-}
-.avg-container {
+.svg-container {
   width: 5rem;
   height: 4.5rem;
   margin: 0 auto 3rem;
@@ -281,168 +185,9 @@
   text-align: center;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  max-width: rem(500);
-  margin: 0 auto;
-
-  .dates-inputs {
-    margin-bottom: 1rem;
-  }
-  .dates-inputs,
-  .textarea {
-    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
-      rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
-    border: 0.1rem solid $whiteback;
-    background-color: $whiteback;
-    border-radius: 2rem;
-    padding: 1rem;
-    resize: none;
-
-    &:disabled {
-      cursor: not-allowed !important;
-    }
-  }
-
-  .textarea {
-    height: 8rem;
-  }
-}
-.radio {
-  display: flex;
-  justify-items: center;
-  justify-content: space-between;
-  padding: 1rem 1rem 0;
-
-  &-container {
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: rem(22);
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    display: flex;
-    align-items: center;
-    font-size: 1rem;
-
-    input {
-      opacity: 0;
-      cursor: pointer;
-
-      &:checked ~ .checkmark {
-        border-color: $secondary;
-        background-color: transparent;
-      }
-    }
-
-    .checkmark {
-      width: rem(20);
-      height: rem(20);
-      border-radius: 50%;
-      background-color: #eee;
-      border: rem(6) solid transparent;
-      margin-left: 0.5rem;
-    }
-  }
-}
-.family {
-  display: flex;
-  align-items: center;
-}
-
-.btn-submit {
-  border: 0.05rem solid $tertiary;
-  border-radius: 2rem;
-  width: 10rem;
-  padding: 0.5rem;
-  background-color: $secondary;
-  font-size: 1.1rem;
-  color: $whiteback;
-  margin: 2rem auto 3rem;
-  box-shadow: $box-shadow2;
-  cursor: pointer;
-}
-
-p {
-  color: $gray600;
-  margin-bottom: 0.5rem;
-  text-align: center;
-}
-.top-margin {
-  margin-top: 4rem;
-
-  @include media(md) {
-    margin-top: 6rem;
-  }
-}
-
-.link {
-  display: block;
-  text-transform: uppercase;
-  text-align: center;
-}
-
-.guests {
-  margin-bottom: 2rem;
-
-  p {
-    font-size: 1rem;
-    text-transform: capitalize;
-  }
-}
-
-.avg-container-guests {
-  width: 5rem;
-  height: 5rem;
-  margin: 0 auto 1rem;
-  svg {
-    border-radius: 50%;
-    box-shadow: $box-shadow;
-  }
-  @include media(md) {
-    width: 7rem;
-    height: 7rem;
-  }
-}
-.number-checklist {
-  color: $colorfont;
-}
-
-.animated-israel {
-  animation: MOVEINLEFT 3s ease-out;
-  animation-fill-mode: backwards;
-}
-.animated-and {
-  animation: MOVEINDOWN 3s ease-out;
-  animation-fill-mode: backwards;
-}
-.animated-jessica {
-  animation: MOVEINRIGHT 3s ease-out;
-  animation-fill-mode: backwards;
-}
-
-.animated-up {
-  animation: MOVEINUP 3s ease-out 0.4s;
-  animation-fill-mode: backwards;
-}
-
-.btn {
-  transition: all 0.2s;
-  &:active {
-    transform: translatey(-0.2rem);
-    box-shadow: 0.1rem 0.5rem 1rem $quaternary;
-  }
-  &:hover {
-    transform: translatey(-0.2rem);
-    /* add shadow at button x,y,intensity and color */
-    box-shadow: 1rem 1rem 1rem $quaternary;
-  }
-}
-
 .check-list {
+  padding-top: 3rem;
+
   &-icons {
     @include media(md) {
       display: flex;
@@ -450,82 +195,38 @@ p {
       padding-top: 3rem;
     }
   }
-}
 
-.gallery {
-  margin-bottom: 4rem;
+  .guests {
+    margin-bottom: 2rem;
+    text-align: center;
 
-  @include media(0, md) {
-    &-item {
-      height: 60vh;
-      width: 100vw;
-      margin-bottom: 1rem;
-      &-10 {
-        display: none;
+    p {
+      font-size: 1rem;
+      text-transform: capitalize;
+
+      &.number-checklist {
+        color: $colorfont;
+        font-size: 2rem;
       }
     }
-  }
 
-  @include media(md) {
-    background-color: rgb(243, 243, 243);
-    grid-column: full-start / full-end;
-
-    display: grid;
-    grid-template: repeat(8, 4.5vw) / repeat(10, 1fr);
-
-    grid-gap: 1rem;
-    padding: 1rem;
-
-    &-item {
-      border-radius: 4px;
+    .svg-container-guests {
+      width: 5rem;
+      height: 5rem;
+      margin: 0 auto 1rem;
+      box-shadow: $box-shadow;
+      border-radius: 50%;
+      position: relative;
       overflow: hidden;
 
-      &-1 {
-        grid-row: 1 / span 3;
-        grid-column: 1 / span 3;
+      svg {
+        height: 100%;
+        width: 100%;
       }
 
-      &-2 {
-        grid-row: 4 / -1;
-        grid-column: 1 / span 2;
-      }
-
-      &-3 {
-        grid-row: 1 / span 4;
-        grid-column: 6 / 8;
-      }
-
-      &-4 {
-        grid-row: 1 / span 5;
-        grid-column: 8 / -1;
-      }
-
-      &-5 {
-        grid-row: 6 / span 3;
-        grid-column: 3 / span 3;
-      }
-
-      &-6 {
-        grid-row: 4 / span 2;
-        grid-column: 3 / span 2;
-      }
-
-      &-7 {
-        grid-row: 5 / span 4;
-        grid-column: 6 / span 2;
-      }
-
-      &-8 {
-        grid-row: 6 / -1;
-        grid-column: 8 / -1;
-      }
-      &-9 {
-        grid-row: 1 / 4;
-        grid-column: 4 / 6;
-      }
-      &-10 {
-        grid-row: 4 / 6;
-        grid-column: 5 / 6;
+      @include media(md) {
+        width: 7rem;
+        height: 7rem;
       }
     }
   }
@@ -548,32 +249,26 @@ p {
   }
 }
 
-.input-number-wrapper {
-  position: relative;
+footer {
+  padding: 0.3rem;
+  margin-top: 4rem;
+  background: $tertiary;
+  font-family: 'Dancing Script';
+  text-align: center;
+  text-shadow: 1px 1px 1px rgba($primary, 0.4);
 
-  input {
-    width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  svg {
+    height: 1rem;
+    width: 1rem;
+    fill: $secondary;
   }
 
-  button {
-    top: 0;
-    position: absolute;
-    border: none;
-    background: none;
-    height: 2rem;
-    width: 2rem;
-    top: 0.8rem;
+  a {
+    font-size: 1.2rem;
+    color: white;
     cursor: pointer;
-
-    &.number-minus {
-      right: 3.8rem;
-    }
-    &.number-plus {
-      right: 1rem;
-    }
-
-    svg {
-      fill: $secondary;
-    }
   }
 }

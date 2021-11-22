@@ -77,16 +77,6 @@ button {
   opacity: 0;
 }
 
-.noSelect {
-  user-select: none;
-}
-
-/** Common Extensions **/
-.ellipsis {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
 svg,
 img {
   height: 100%;
@@ -107,78 +97,4 @@ img {
 ::-ms-input-placeholder {
   /* Microsoft Edge */
   color: $colorfont;
-}
-
-.container {
-  margin: 0 auto 5rem;
-
-  &.no-margin {
-    margin: 0 auto;
-  }
-
-  padding: 0 var(--sectionPadding);
-  max-width: rem(1000);
-
-  @include media(xs) {
-    --sectionPadding: 2rem;
-  }
-
-  @include media(sm) {
-    --sectionPadding: 4rem;
-  }
-}
-
-@keyframes MOVEINUP {
-  0% {
-    opacity: 0;
-    transform: translateY(14rem);
-  }
-  60% {
-    opacity: 0.6;
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0rem);
-  }
-}
-@keyframes MOVEINDOWN {
-  0% {
-    opacity: 0;
-    transform: translateY(-14rem);
-  }
-  94% {
-    opacity: 0;
-    transform: translateY(0rem);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0rem);
-  }
-}
-
-@keyframes MOVEINLEFT {
-  0% {
-    opacity: 0;
-    transform: translateX(-14rem);
-  }
-  60% {
-    opacity: 0.6;
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0rem);
-  }
-}
-@keyframes MOVEINRIGHT {
-  0% {
-    opacity: 0;
-    transform: translateX(14rem);
-  }
-  60% {
-    opacity: 0.6;
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0rem);
-  }
 }

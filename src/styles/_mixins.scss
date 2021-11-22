@@ -19,11 +19,18 @@ $breakpoints: (
     $screen: map-get($breakpoints, $breakpoint);
   }
 
-  @if $limit != 0 {
+  @if $limit != 0 and $landscape != true {
     @if map-has-key($breakpoints, $limit) {
       $limit: map-get($breakpoints, $limit) - 1;
     }
     @media (min-width: $screen) and (max-width: $limit) {
+      @content;
+    }
+  } @else if $limit != 0 and $landscape {
+    @if map-has-key($breakpoints, $limit) {
+      $limit: map-get($breakpoints, $limit) - 1;
+    }
+    @media (min-width: $screen) and (max-width: $limit) and (orientation: landscape) {
       @content;
     }
   } @else if $landscape {
