@@ -3,3 +3,4 @@ node_modules/
 dist/
 insights.txt
 .DS_Store
+.env
