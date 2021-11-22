@@ -1,10 +1,16 @@
-const container = document.querySelector('.input-number-wrapper')
-const input = container.children[0]
-const subtract = container.children[1]
+const container = document.querySelector('.input-number-controller')
+const subtract = container.children[0]
+const input = container.children[1]
 const add = container.children[2]
 
 subtract.addEventListener('click', handleMath)
 add.addEventListener('click', handleMath)
+input.addEventListener('blur', ({ target }) => {
+  console.log(target)
+})
+input.addEventListener('change', ({ target }) => {
+  console.log(target)
+})
 
 let number = ''
 const minValue = 1,

@@ -1,9 +1,13 @@
 import UpdateCountDown from './countdown'
+import { loader } from './forms'
 import './numberInput'
-import './forms'
 
 // init count Down
-UpdateCountDown('Jan 11, 2022 00:30:00')
+UpdateCountDown('Feb 12, 2022 15:30:00')
+
+setTimeout(() => {
+  loader.classList.add('hidden')
+}, 1000)
 
 // target elements
 

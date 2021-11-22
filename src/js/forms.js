@@ -1,33 +1,30 @@
-// fetch forms disablrr default submit to DB
-
-// function name(params) {}
-
 const sendWishes = document.querySelector('.form-wishes')
 const confirm = document.querySelector('.form-dates')
-const loader = document.querySelector('.quantum-loader-page')
+export const loader = document.querySelector('.quantum-loader-page')
 
-sendWishes.addEventListener('submit', (e) => {
+const rootAPI = 'http://api.isrra-y-jess.com/prod'
+
+sendWishes.addEventListener('submit', handleForm)
+confirm.addEventListener('submit', handleForm)
+
+async function handleForm(e) {
   e.preventDefault()
-
-  console.log(e)
-})
-
-confirm.addEventListener('submit', async (e) => {
+  const path = e.target.getAttribute('data-path')
   const inputs = e.target.elements
-  e.preventDefault()
+  const body = {}
 
-  const body = {
-    name: inputs['name'].value,
-    email: inputs['email'].value,
-    number: parseInt(inputs['number'].value),
-    family: inputs['family'].value,
+  for (let i = 0; i < inputs.length; i++) {
+    const el = inputs[i]
+    if (el.name) {
+      if (el.type !== 'radio' || el.checked) {
+        body[el.name] = el.value
+      }
+    }
   }
 
-  console.log(JSON.stringify(body))
-
   try {
-    loader.classList.toggle('hidden')
-    const res = await fetch('http://localhost:4321/dev/confirm-invite', {
+    loader.classList.add('hidden')
+    const res = await fetch(`${rootAPI}/${path}`, {
       body: JSON.stringify(body),
       method: 'POST',
     })
@@ -39,8 +36,21 @@ confirm.addEventListener('submit', async (e) => {
       console.log(res.status)
       throw new Error(res.status)
     }
-    loader.classList.toggle('hidden')
   } catch (error) {
     console.log(error)
+  } finally {
+    await setDelay(2000)
+    for (let i = 0; i < inputs.length; i++) {
+      const el = inputs[i]
+      if (/^(text|email)/.test(el.type)) el.value = ''
+      if (/^number$/.test(el.type)) el.value = '1'
+    }
+    loader.classList.remove('hidden')
   }
-})
+}
+
+function setDelay(delay) {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve(), delay)
+  })
+}

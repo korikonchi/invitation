@@ -33,18 +33,18 @@ function countDown(date, callback) {
 }
 
 function UpdateCountDown(targetDate) {
-  const container = document.querySelector('.timer')
+  const container = document.querySelector('.counter')
   const children = container.children
-  const days = children[0].querySelector('.timer-time')
-  const hours = children[1].querySelector('.timer-time')
-  const mins = children[2].querySelector('.timer-time')
-  const secs = children[3].querySelector('.timer-time')
+  const days = children[0].querySelector('.counter-time')
+  const hours = children[1].querySelector('.counter-time')
+  const mins = children[2].querySelector('.counter-time')
+  const secs = children[3].querySelector('.counter-time')
 
   countDown(targetDate, ({ d, h, m, s }) => {
-    days.innerText = d
-    hours.innerText = h
-    mins.innerText = m
-    secs.innerText = s
+    days.innerText = `${d}`.padStart(2, '0')
+    hours.innerText = ` ${h}`.padStart(2, '0')
+    mins.innerText = `${m}`.padStart(2, '0')
+    secs.innerText = `${s}`.padStart(2, '0')
   })
 }
 
