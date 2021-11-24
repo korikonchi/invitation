@@ -1,4 +1,13 @@
 // Container of all DOM elements
+export const state = {
+  isAnimating: false,
+  offView: true,
+  bride: 0,
+  groom: 0,
+  invites: 200,
+  pending: 200,
+}
+
 export const DOM = {
   formWishes: document.querySelector('.form-wishes'),
   formConfirm: document.querySelector('.form-dates'),
@@ -9,7 +18,7 @@ export const DOM = {
 }
 
 const messages = {
-  emailExists: 'Este email ya esta registrado',
+  ConditionalCheckFailedException: 'Este email ya esta registrado',
 }
 
 const locale = {
@@ -18,7 +27,9 @@ const locale = {
   name: 'Nombre',
   family: 'Invitado de',
   number: 'Numero de invitados',
-  email: ' Correo electronico',
+  email: 'Correo electronico',
+  bride: 'La Novia',
+  groom: 'El Novio',
 }
 
 /**
@@ -90,10 +101,13 @@ export function handleFormSubmit(e) {
   loadModal({
     classList: 'submit',
     title: 'Confirma tus datos',
-    body: Object.entries(body).map(
-      ([key, value]) =>
-        `<span>${locale[key]}</span>: <strong>${value}</strong><br/>`
-    ),
+    body: Object.entries(body).map(([key, value]) => {
+      const val =
+        value.length > 120 ? value.substr(0, 120).trim() + '...' : value
+      return `<span>${locale[key]}</span>: <strong>${
+        locale[val] || val
+      }</strong><br/>`
+    }),
     buttons: [
       { label: 'Editar', cta: 'close' },
       { label: 'Aceptar', cta: 'submit' },
@@ -113,24 +127,26 @@ async function submitToServer(path, body, inputs) {
     await setDelay(2000)
     const res = await fetchAPI({
       api: `${process.env.ROOT_API}/${path}`,
-      options: {
-        body: JSON.stringify(body),
-      },
+      options: { body },
     })
 
-    console.log(res)
-
-    if (res.errorCode) {
+    if (res.error) {
       loadModal({
         classList: 'error',
-        title: messages[res.errorCode],
+        title: messages[res.error],
         buttons: [{ label: 'Okay', cta: 'close' }],
       })
     } else {
+      if (res.Bride) {
+        state.invites = res.Invites
+        state.bride = res.Bride
+        state.groom = res.Groom
+        state.pending = res.Pending
+      }
       const title =
         path === 'send-wish'
           ? 'Gracias por tus buenos deseos'
-          : 'Tu invitacion ha sido confirmada'
+          : 'Tu invitación ha sido confirmada'
 
       loadModal({
         title,
@@ -209,22 +225,22 @@ export async function animateCounters(state, counters) {
   })
   animateNumber({
     element: counters[1],
-    delay: mathDelay(state.novio),
-    targetNumber: state.novio,
+    delay: mathDelay(state.groom),
+    targetNumber: state.groom,
     startNumber: 0,
     state,
   })
   animateNumber({
     element: counters[2],
-    delay: mathDelay(state.novia),
-    targetNumber: state.novia,
+    delay: mathDelay(state.bride),
+    targetNumber: state.bride,
     startNumber: 0,
     state,
   })
   animateNumber({
     element: counters[3],
-    delay: mathDelay(state.invites - state.pendientes),
-    targetNumber: state.pendientes,
+    delay: mathDelay(state.invites - state.pending),
+    targetNumber: state.pending,
     startNumber: state.invites,
     state,
   })
@@ -273,11 +289,13 @@ function loadModal({
     <div class="modal-card card ${classList}">
       <h3 class="title">${title}</h3>
       <div class='body'>
-      ${body.length ? `<p>${body.join('')}</p>` : ''}</div>
+      ${body.length ? `<p class=''>${body.join('')}</p>` : ''}</div>
       <div class='controls'>
         ${buttons
-          .map((e) => {
-            return `<button class="btn btn-submit modal-btn" type="button" data-cta=${e.cta}> ${e.label}</button>`
+          .map((e, i) => {
+            return `<button class="btn btn-submit modal-btn ${
+              i > 0 && 'margin-left'
+            }" type="button" data-cta=${e.cta}> ${e.label}</button>`
           })
           .join('')}
       </div>

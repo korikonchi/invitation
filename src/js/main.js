@@ -4,16 +4,8 @@ import {
   handleFormSubmit,
   animateCounters,
   fetchAPI,
+  state,
 } from './utilities'
-
-const state = {
-  isAnimating: false,
-  invites: 200,
-  novio: 0,
-  novia: 0,
-  pendientes: 200,
-  offView: true,
-}
 
 const counters = DOM.checkList.querySelectorAll('.number-checklist')
 
@@ -80,9 +72,10 @@ async function fetchStats() {
       },
     })
 
-    state.novia = res.novia
-    state.novio = res.novio
-    state.pendientes = res.pendientes
+    state.invites = res.Invites
+    state.bride = res.Bride
+    state.groom = res.Groom
+    state.pending = res.Pending
   } catch (error) {
     console.log(error)
   }
