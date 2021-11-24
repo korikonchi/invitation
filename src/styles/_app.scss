@@ -233,10 +233,16 @@
 }
 
 .desktop-view {
+  display: flex;
+  flex-direction: column;
+
+  > * {
+    margin-bottom: 8rem;
+  }
+
   @include media(lg) {
     max-width: rem(1000);
     margin: 0 auto;
-    display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
     padding: 0 2rem;
@@ -245,6 +251,7 @@
       max-width: rem(380);
       flex-basis: 50%;
       padding: 0;
+      margin-bottom: 0;
     }
   }
 }
@@ -257,9 +264,6 @@ footer {
   text-align: center;
   text-shadow: 1px 1px 1px rgba($primary, 0.4);
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
   svg {
     height: 1rem;
     width: 1rem;
@@ -267,7 +271,10 @@ footer {
   }
 
   a {
-    font-size: 1.2rem;
+    &.phone {
+      font-size: 1rem;
+    }
+    font-size: 1.3rem;
     color: white;
     cursor: pointer;
   }

@@ -15,12 +15,16 @@
   @include media(md) {
     background-color: rgb(243, 243, 243);
     grid-column: full-start / full-end;
-
     display: grid;
     grid-template: repeat(8, 6vw) / repeat(10, 1fr);
-
     grid-gap: 1rem;
     padding: 1rem;
+
+    &.animate {
+      &-item {
+        border: 2px solid #f0c !important;
+      }
+    }
 
     &-item {
       border-radius: 4px;
