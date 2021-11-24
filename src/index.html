@@ -8,12 +8,13 @@
   <link rel="stylesheet" href="./styles/main.scss" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="icon" type="image/x-icon" href="./favicon.ico">
   <link
     href="https://fonts.googleapis.com/css2?family=Alice&family=Bellota+Text&family=Dancing+Script:wght@700&display=swap"
     rel="stylesheet" />
-  <title>Solo Faltas Tu!</title>
+  <title>I&J | Solo Faltas Tu!</title>
 </head>
-
+ 
 <body>
   <div class="sec-1">
     <img src="https://assets.digitalvilla.ca/images/issra-jess/hero.jpg" alt="" class="img-main" />
@@ -25,7 +26,7 @@
     <span class="box-text--sub animated-up">-- nos casamos --</span>
   </div>
   <!-- section 2 -->
-  <div class="sec-2 container no-margin">
+  <div class="sec-2 container spacing">
     <h2 class="title">receta para nuestra boda</h2>
     <div class="list-container">
       <ul class="list-recipe">
@@ -114,7 +115,7 @@
     </div>
   </div>
   <!-- section 3 -->
-  <div class="sec-3 container">
+  <div class="sec-3 container spacing">
     <div class="card-profile">
       <h2 class="title card-profile-title">Él</h2>
       <figure class="card-profile-image">
@@ -138,8 +139,8 @@
     </div>
   </div>
 
-  <div class="sec-4">
-    <div class="our-history container">
+  <div class="sec-4 spacing">
+    <div class="our-history container spacing">
       <h2 class="title">Nuestra historia</h2>
       <p class="message">
         El plan de Dios para nosotros ya estaba trazado… Nuestras vidas se
@@ -194,7 +195,7 @@
   </div>
   <!-- section5 -->
   <div class="desktop-view">
-    <div class="sec-5 container bottom-sec">
+    <div class="sec-5 container bottom-sec spacing">
       <h2 class="title">Mensaje de amor para los novios</h2>
       <p class="">
         Compartir contigo este gran día hará que sea inolvidable! <br />
@@ -205,13 +206,12 @@
 
       <form class="form-wishes noSelect" data-path="send-wish">
         <label for="whishes-input-nombre" class="hidden">Nombre</label>
-        <input id="whishes-input-nombre" class="dates-inputs" type="text" name="sender" required
+        <input id="whishes-input-nombre" class="dates-inputs" type="text" name="sender" required  maxlength="40"
           placeholder="Nombre:" />
 
         <label for="textarea" class="hidden">deseos</label>
 
-        <textarea value="" class="textarea" name="deseos" id="textarea" placeholder="Mandandanos tus deseos...">
-          </textarea>
+        <textarea required class="textarea" name="wish" id="textarea" placeholder="Mandandanos tus deseos..." maxlength="1000"></textarea>
         <input class="btn-submit btn" type="submit" value="ENVIAR" />
       </form>
     </div>
@@ -245,10 +245,10 @@
       <h2 class="title">confirmar asistencia</h2>
       <form class="form-dates noSelect" data-path="confirm-invite">
         <label for="dates-input-nombre" class="hidden">Nombre</label>
-        <input id="dates-input-nombre" class="dates-inputs" type="text" name="name" required
+        <input id="dates-input-nombre" class="dates-inputs" type="text" name="name" required maxlength="40"
           placeholder="Nombre Completo" />
         <label for="dates-input-correo" class="hidden">Correo Electronico</label>
-        <input id="dates-input-correo" class="dates-inputs" type="email" name="email" required
+        <input id="dates-input-correo" class="dates-inputs" type="email" name="email" maxlength="60" required
           placeholder="Correo Electronico" />
 
         <div class="input-number">
@@ -316,7 +316,7 @@
     </div>
   </div>
 
-  <div class="check-list container">
+  <div class="check-list container spacing">
     <!--  -->
     <div class="check-list-icons">
       <div class="guests">
@@ -340,7 +340,7 @@
               fill="white" />
           </svg>
         </figure>
-        <p class="number-checklist">200</p>
+        <p class="number-checklist">0</p>
         <p class="paragraph-checklist">confirmados novio</p>
       </div>
       <div class="guests">
@@ -373,7 +373,7 @@
             </defs>
           </svg>
         </figure>
-        <p class="number-checklist">200</p>
+        <p class="number-checklist">0</p>
         <p class="paragraph-checklist">confirmados novia</p>
       </div>
       <div class="guests">
@@ -410,7 +410,11 @@
       <path
         d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z">
       </path>
-    </svg> by Digital Villa</a></p>
+    </svg> by Digital Villa</a>
+    <br>
+    <a class='phone'href="https://api.whatsapp.com/send?phone=527713443897" target="_blank">
+      Canada 587-229-3860 <br> Mexico 771-344-3897
+    </a>
   </footer>
   <script type="module" src="./js/main.js"></script>
 </body>
