@@ -1,8 +1,26 @@
-import { countDown, DOM, handleFormSubmit } from './utilities'
+import {
+  countDown,
+  DOM,
+  handleFormSubmit,
+  animateCounters,
+  fetchAPI,
+} from './utilities'
+
+const state = {
+  isAnimating: false,
+  invites: 200,
+  novio: 0,
+  novia: 0,
+  pendientes: 200,
+  offView: true,
+}
+
+const counters = DOM.checkList.querySelectorAll('.number-checklist')
 
 function setUpForms() {
   DOM.formWishes.addEventListener('submit', handleFormSubmit)
   DOM.formConfirm.addEventListener('submit', handleFormSubmit)
+  DOM.formWishes.querySelector('textarea').value = ''
 }
 
 function updateCountDown() {
@@ -20,7 +38,7 @@ function updateCountDown() {
   })
 }
 
-function setUpNumberInput(params) {
+function setUpNumberInput() {
   const subtract = DOM.inputNumber.children[0]
   const input = DOM.inputNumber.children[1]
   const add = DOM.inputNumber.children[2]
@@ -53,26 +71,57 @@ function setUpNumberInput(params) {
   }
 }
 
-async function fetchStats(params) {
+async function fetchStats() {
   try {
-    const res = await fetchAPI(`${process.env.ROOT_API}/get-invites`)
-    console.log(res)
+    const res = await fetchAPI({
+      api: `${process.env.ROOT_API}/get-invites`,
+      options: {
+        method: 'GET',
+      },
+    })
+
+    state.novia = res.novia
+    state.novio = res.novio
+    state.pendientes = res.pendientes
   } catch (error) {
     console.log(error)
   }
 }
 
+function setInvitesAnimation() {
+  document.body.addEventListener('scroll', triggerAnimation, { passive: true })
+}
+
+function triggerAnimation() {
+  const bounds = DOM.checkList.getBoundingClientRect()
+  const triggerHeight = window.innerWidth > 768 ? window.innerHeight / 2 : 0
+
+  if (window.pageYOffset + bounds.top <= triggerHeight) {
+    state.offView && !state.isAnimating && animateCounters(state, counters)
+    state.offView = false
+  } else if (
+    !state.isAnimating &&
+    window.pageYOffset + bounds.top >= window.innerHeight
+  ) {
+    state.offView = true
+  }
+}
+
 ;(function init() {
   try {
+    fetchStats()
     setUpForms()
     updateCountDown()
     setUpNumberInput()
-    fetchStats()
+    setInvitesAnimation()
 
-    // remove initial loader
-    setTimeout(() => DOM.loader.classList.add('hidden'), 1000)
+    setTimeout(() => {
+      // Remove initial loader
+      DOM.loader.classList.add('hidden')
+      triggerAnimation()
+    }, 1000)
   } catch (error) {
-    // location.reload()
     console.log(error)
+    DOM.loader.classList.add('hidden')
   }
 })()
