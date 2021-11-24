@@ -84,6 +84,14 @@
     opacity: 1;
   }
 }
+@keyframes FadeInSlow {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
 .animated-israel {
   animation: MOVEINLEFT 3s ease-out;

@@ -43,13 +43,13 @@
 .btn {
   transition: all 0.2s;
   &:active {
-    transform: translatey(-0.2rem);
+    transform: translatey(-0.1rem);
     box-shadow: 0.1rem 0.5rem 1rem $quaternary;
   }
   &:hover {
-    transform: translatey(-0.2rem);
+    transform: translatey(-0.1rem);
     /* add shadow at button x,y,intensity and color */
-    box-shadow: 1rem 1rem 1rem $quaternary;
+    box-shadow: 0.21rem 0.21rem 0.51rem $quaternary;
   }
 
   &-submit {
