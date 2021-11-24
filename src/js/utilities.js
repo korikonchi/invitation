@@ -115,9 +115,6 @@ export function handleFormSubmit(e) {
     onSubmit: async () => {
       await submitToServer(path, body, inputs)
     },
-    onClose: () => {
-      console.log('Modal Removed')
-    },
   })
 }
 
@@ -138,9 +135,9 @@ async function submitToServer(path, body, inputs) {
       })
     } else {
       if (res.Bride) {
-        state.invites = res.Invites
         state.bride = res.Bride
         state.groom = res.Groom
+        state.invites = res.Invites
         state.pending = res.Pending
       }
       const title =
@@ -152,9 +149,6 @@ async function submitToServer(path, body, inputs) {
         title,
         classList: 'success',
         buttons: [{ label: 'Gracias', cta: 'close' }],
-        onClose: () => {
-          console.log(res)
-        },
       })
     }
   } catch (error) {
