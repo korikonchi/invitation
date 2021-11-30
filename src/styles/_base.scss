@@ -52,23 +52,13 @@ button {
   line-height: inherit;
   appearance: none;
   border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
   text-decoration: none;
-  -moz-appearance: none; /* Firefox */
-  -webkit-appearance: none; /* Safari and Chrome */
-  appearance: none;
 
   &:disabled {
     cursor: not-allowed !important;
   }
-}
-
-a,
-img,
-svg,
-figure,
-button,
-label {
-  user-select: none;
 }
 
 /**
@@ -109,10 +99,4 @@ img {
 ::-ms-input-placeholder {
   /* Microsoft Edge */
   color: $colorfont;
-}
-
-::selection,
-::-moz-selection {
-  background: $tertiary;
-  color: white;
 }
