@@ -51,9 +51,11 @@
 
 .quantum-loader-page {
   --theme: #{$secondary};
+  --background: var(--background-color, #{rgba(white, 0.3)});
   --loader-speed: 0.8s;
   --size: 6rem;
 
+  // overflow: hidden;
   position: sticky;
   display: flex;
   justify-content: center;
@@ -64,8 +66,11 @@
   right: 0;
   z-index: 10;
   height: 100%;
-  background-image: radial-gradient(
-    rgba(100, 46, 46, 0.075) 35%,
-    rgba(0, 0, 0, 0.267)
-  );
+
+  &.gradient {
+    background-image: radial-gradient(
+      var(--background) 10%,
+      rgba(255, 255, 255, 0.2)
+    );
+  }
 }

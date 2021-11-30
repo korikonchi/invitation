@@ -7,7 +7,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 100;
 
   .modal-card {
     padding: 1rem;
@@ -16,7 +15,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    z-index: 102;
+    z-index: 1;
 
     animation: FadeInSlow 0.5s ease-out;
 
@@ -59,25 +58,7 @@
       margin-bottom: 0;
     }
     p {
-      .capitalize {
-        text-transform: capitalize;
-        text-transform: capitalize;
-      }
       padding: 1rem 0 0;
-
-      span {
-        &:first-of-type {
-          margin-bottom: 1rem;
-          display: inline-block;
-          font-weight: bold;
-        }
-      }
-      strong {
-        &.remove {
-          text-decoration: line-through;
-          opacity: 0.5;
-        }
-      }
     }
   }
   .modal-bg {
