@@ -1,10 +1,11 @@
 import {
   countDown,
-  DOM,
   handleFormSubmit,
   animateCounters,
   fetchAPI,
-  state,
+  setUpSelect,
+  STATE,
+  DOM,
 } from './utilities'
 
 const counters = DOM.checkList.querySelectorAll('.number-checklist')
@@ -31,6 +32,7 @@ function updateCountDown() {
 }
 
 function setUpNumberInput() {
+  if (!DOM.inputNumber) return
   const subtract = DOM.inputNumber.children[0]
   const input = DOM.inputNumber.children[1]
   const add = DOM.inputNumber.children[2]
@@ -66,16 +68,16 @@ function setUpNumberInput() {
 async function fetchStats() {
   try {
     const res = await fetchAPI({
-      api: `${process.env.ROOT_API}/get-invites`,
+      api: `${process.env.ROOT_API}/get-guest-count`,
       options: {
         method: 'GET',
       },
     })
 
-    state.invites = res.Invites
-    state.bride = res.Bride
-    state.groom = res.Groom
-    state.pending = res.Pending
+    STATE.invites = res.Invites
+    STATE.bride = res.Bride
+    STATE.groom = res.Groom
+    STATE.pending = res.Pending
   } catch (error) {
     console.log(error)
   }
@@ -90,19 +92,20 @@ function triggerAnimation() {
   const triggerHeight = window.innerWidth > 768 ? window.innerHeight / 2 : 0
 
   if (window.pageYOffset + bounds.top <= triggerHeight) {
-    state.offView && !state.isAnimating && animateCounters(state, counters)
-    state.offView = false
+    STATE.offView && !STATE.isAnimating && animateCounters(STATE, counters)
+    STATE.offView = false
   } else if (
-    !state.isAnimating &&
+    !STATE.isAnimating &&
     window.pageYOffset + bounds.top >= window.innerHeight
   ) {
-    state.offView = true
+    STATE.offView = true
   }
 }
 
-;(function init() {
+function init() {
   try {
     fetchStats()
+    setUpSelect()
     setUpForms()
     updateCountDown()
     setUpNumberInput()
@@ -117,4 +120,6 @@ function triggerAnimation() {
     console.log(error)
     DOM.loader.classList.add('hidden')
   }
-})()
+}
+
+document.body.onload = init
