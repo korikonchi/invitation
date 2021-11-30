@@ -9,6 +9,74 @@ form {
     font-size: 1.05rem;
   }
 
+  &.form-confirm {
+    .select-container {
+      position: relative;
+      margin-bottom: 1rem;
+      --fontColor: #{$colorfont};
+
+      select {
+        width: 100%;
+        margin: 0;
+        color: var(--fontColor);
+      }
+
+      &.open {
+        svg {
+          transform: translateY(-50%) rotate(180deg);
+        }
+      }
+      svg {
+        height: 2rem;
+        width: 2rem;
+        fill: $secondary;
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+    .contact {
+      a,
+      a:visited {
+        cursor: pointer;
+        color: $primary;
+      }
+
+      .break {
+        color: $primary;
+        display: block;
+        height: 1px;
+        overflow: hidden;
+        opacity: 0;
+
+        @include media(md) {
+          height: auto;
+          opacity: 1;
+          display: inline;
+        }
+      }
+    }
+
+    .btn-submit {
+      margin-top: 1rem;
+    }
+
+    #checklist {
+      height: 10rem;
+      overflow-y: auto;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+
+      .guest-labels {
+        text-align: left;
+        padding-bottom: 0.2rem;
+      }
+    }
+  }
+
   .dates-inputs {
     margin-bottom: 1rem;
   }
@@ -29,7 +97,7 @@ form {
   }
 
   .textarea {
-    height: 8rem;
+    height: 10rem;
   }
 
   .input-number {
@@ -128,5 +196,101 @@ form {
         margin-left: 0.3rem;
       }
     }
+  }
+}
+
+.inputGroup {
+  margin: 0.2rem 0;
+  position: relative;
+
+  label {
+    padding: 0.2rem 0 0.2rem 0.8rem;
+    border-radius: 2rem;
+    text-decoration: line-through;
+
+    width: 100%;
+    display: block;
+    text-align: left;
+    color: #a0a0a0;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    transition: color 200ms ease-in;
+    overflow: hidden;
+
+    &:before {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      content: '';
+      background-color: $quaternary;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) scale3d(1, 1, 1);
+      transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+      opacity: 0;
+      z-index: -1;
+    }
+
+    &:after {
+      width: 1.2rem;
+      height: 1.2rem;
+      content: '';
+      border: 2px solid #d1d7dc;
+      background-color: #d1d7dc;
+      background-repeat: no-repeat;
+      background-position: rem(2) rem(2);
+      border-radius: 50%;
+      z-index: 2;
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      transition: all 200ms ease-in;
+    }
+  }
+
+  input:checked ~ label {
+    color: $font-color;
+    text-decoration: none;
+
+    &:before {
+      transform: translate(-50%, -50%) scale3d(90, 56, 1);
+      opacity: 1;
+    }
+
+    &:after {
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
+      background-color: $secondary;
+      border-color: $secondary;
+    }
+  }
+
+  @include media(lg) {
+    label {
+      padding: 0.3rem 0 0.3rem 0.8rem;
+
+      &:after {
+        width: 1.4rem;
+        height: 1.4rem;
+        background-position: rem(2) rem(3);
+        right: 1.5rem;
+      }
+    }
+  }
+
+  input {
+    width: 32px;
+    height: 32px;
+    order: 1;
+    z-index: 2;
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    visibility: hidden;
   }
 }

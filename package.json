@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "yarn parcel serve --no-cache",
-    "build": "yarn parcel build"
+    "build": "rm -rf .parcel-cache dist && yarn parcel build"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.0.1",

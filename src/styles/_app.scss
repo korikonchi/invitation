@@ -66,6 +66,11 @@
     padding: 2rem 0;
   }
 
+  @include media(lg) {
+    margin-top: 7rem;
+    margin-bottom: 0;
+  }
+
   .list-container {
     margin-bottom: 2rem;
     p {
@@ -136,9 +141,12 @@
   flex-direction: column;
 
   @include media(md) {
-    height: auto;
     flex-direction: row;
     justify-content: space-between;
+  }
+
+  @include media(lg) {
+    margin-bottom: 0;
   }
 
   .card-profile {
@@ -147,8 +155,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 1.08rem;
+    font-size: 1rem;
 
+    &:first-of-type {
+      margin-bottom: 3rem;
+    }
     &-image {
       height: 6rem;
       width: 6rem;
@@ -157,7 +168,18 @@
       border: 2px solid $tertiary;
     }
     &-text {
-      padding: 1rem 0;
+      padding: 1rem 0.5rem;
+    }
+
+    @include media(md) {
+      flex-basis: 50%;
+      justify-content: flex-start;
+      margin-top: 10%;
+
+      &-text {
+        padding: 2rem 1rem 0;
+        margin-bottom: 0;
+      }
     }
   }
 }
@@ -175,6 +197,11 @@
 .sec-5 {
   text-align: center;
   margin-bottom: 5rem;
+
+  p {
+    padding-bottom: 2rem;
+    max-width: rem(500);
+  }
 }
 .svg-container {
   width: 5rem;
@@ -245,24 +272,30 @@
     margin: 0 auto;
     flex-wrap: wrap;
     align-items: flex-start;
+    flex-direction: row;
     padding: 0 2rem;
 
     > * {
       max-width: rem(380);
       flex-basis: 50%;
       padding: 0;
-      margin-bottom: 0;
+
+      &:not(:first-child) {
+        margin-bottom: 0;
+      }
     }
   }
 }
 
 footer {
-  padding: 0.3rem;
+  padding: 0.8rem;
   margin-top: 4rem;
   background: $tertiary;
   font-family: 'Dancing Script';
   text-align: center;
-  text-shadow: 1px 1px 1px rgba($primary, 0.4);
+  text-shadow: 1px 1px 2px rgba($primary, 0.7);
+  display: flex;
+  flex-direction: column;
 
   svg {
     height: 1rem;
@@ -277,5 +310,18 @@ footer {
     font-size: 1.3rem;
     color: white;
     cursor: pointer;
+  }
+
+  @include media(md) {
+    flex-direction: row;
+    justify-content: space-between;
+    a {
+      &.mex {
+        order: 3;
+      }
+      &.digital {
+        order: 2;
+      }
+    }
   }
 }

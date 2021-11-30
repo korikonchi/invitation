@@ -1,35 +1,25 @@
+import { familyKeys, locale, messages } from './constants'
+
 // Container of all DOM elements
-export const state = {
+export const STATE = {
   isAnimating: false,
   offView: true,
   bride: 0,
   groom: 0,
   invites: 200,
   pending: 200,
+  group: null,
 }
 
 export const DOM = {
   formWishes: document.querySelector('.form-wishes'),
-  formConfirm: document.querySelector('.form-dates'),
+  formConfirm: document.querySelector('.form-confirm'),
   loader: document.querySelector('.quantum-loader-page'),
   counter: document.querySelector('.counter'),
   inputNumber: document.querySelector('.input-number-controller'),
+  selectFamily: document.querySelector('#family-select'),
+  membersContainer: document.querySelector('#checklist'),
   checkList: document.querySelector('.check-list'),
-}
-
-const messages = {
-  ConditionalCheckFailedException: 'Este email ya esta registrado',
-}
-
-const locale = {
-  sender: 'Remitente',
-  wish: 'Deseo',
-  name: 'Nombre',
-  family: 'Invitado de',
-  number: 'Numero de invitados',
-  email: 'Correo electronico',
-  bride: 'La Novia',
-  groom: 'El Novio',
 }
 
 /**
@@ -88,24 +78,38 @@ export function handleFormSubmit(e) {
   for (let i = 0; i < inputs.length; i++) {
     const el = inputs[i]
     if (el.name) {
-      if (el.type !== 'radio' || el.checked) {
+      if (/^(checkbox)$/.test(el.type)) {
+        body[el.name] = `${el.value.toLowerCase()}${
+          !el.checked ? 'REMOVE' : ''
+        }`
+      } else {
         body[el.name] =
           el.type === 'textarea'
             ? el.value.substr(0, 1000)
-            : el.value.substr(0, 40)
+            : el.value.substr(0, 40).trim().toLowerCase()
       }
     }
   }
 
+  if (Object.keys(body).length < 2) return
+
   // show modal
   loadModal({
     classList: 'submit',
-    title: 'Confirma tus datos',
+    title: `${
+      path === 'update-group' ? 'Lista de Asistencia' : 'Confirma tus Mensaje'
+    }`,
     body: Object.entries(body).map(([key, value]) => {
       const val =
-        value.length > 120 ? value.substr(0, 120).trim() + '...' : value
-      return `<span>${locale[key]}</span>: <strong>${
-        locale[val] || val
+        value.length > 120
+          ? value.substr(0, 120).trim() + '...'
+          : value.replace('REMOVE', '')
+
+      if (/REMOVE/.test(value) && !hasChanged(value)) return ''
+      return `<span>${locale[key] || ''}</span> <strong class="${
+        /^(name|sender)$/.test(key) && 'capitalize'
+      } ${/REMOVE/.test(value) && 'remove'}">${
+        locale[val] || capitalize(val)
       }</strong><br/>`
     }),
     buttons: [
@@ -121,6 +125,27 @@ export function handleFormSubmit(e) {
 async function submitToServer(path, body, inputs) {
   try {
     DOM.loader.classList.remove('hidden')
+
+    if (path === 'update-group') {
+      body = {
+        ...STATE.group,
+        Members: Object.entries(body).reduce((acc, [key, value], i) => {
+          const wasRemoved = value.indexOf('REMOVE') > 0
+          const Name = value.replaceAll('REMOVE', ' ').toUpperCase()
+
+          if (key !== 'family') {
+            acc.push({
+              Name,
+              Type: STATE.group.Members[i - 1],
+              Attending: !wasRemoved,
+            })
+          }
+
+          return acc
+        }, []),
+      }
+    }
+
     await setDelay(2000)
     const res = await fetchAPI({
       api: `${process.env.ROOT_API}/${path}`,
@@ -135,11 +160,17 @@ async function submitToServer(path, body, inputs) {
       })
     } else {
       if (res.Bride) {
-        state.bride = res.Bride
-        state.groom = res.Groom
-        state.invites = res.Invites
-        state.pending = res.Pending
+        STATE.bride = res.Bride
+        STATE.groom = res.Groom
+        STATE.invites = res.Invites
+        STATE.pending = res.Pending
       }
+
+      DOM.membersContainer.innerHTML = ''
+      DOM.selectFamily.style.setProperty(`--fontColor`, '#cb9797')
+      DOM.selectFamily.innerHTML = `<option className='placeholder' value='' hidden>Selecciona tu familia</option>${familyKeys.map(
+        (el, i) => `<option value=${i}>${capitalize(el)}</option> `
+      )}`
       const title =
         path === 'send-wish'
           ? 'Gracias por tus buenos deseos'
@@ -317,4 +348,56 @@ function loadModal({
   }
 
   document.body.appendChild(container)
+}
+
+export function setUpSelect() {
+  DOM.selectFamily.innerHTML = `<option className='placeholder' value='' hidden>Selecciona tu familia</option>${familyKeys.map(
+    (el, i) => `<option value=${i}>${capitalize(el)}</option> `
+  )}`
+
+  DOM.selectFamily.addEventListener('change', async (e) => {
+    DOM.selectFamily.style.setProperty(`--fontColor`, '#737373')
+    DOM.loader.classList.remove('hidden')
+    // fetch
+    STATE.group = await fetchAPI({
+      api: `${process.env.ROOT_API}/get-group?group=${familyKeys[
+        e.target.value
+      ].replaceAll(' ', '_')}`,
+      options: { method: 'GET' },
+    })
+
+    DOM.loader.classList.add('hidden')
+    DOM.membersContainer.innerHTML = `${STATE.group.Members.map(
+      (e, i) => `
+        <div class="inputGroup">
+        <input id="${i}" ${
+        e.Attending ? 'checked' : ''
+      } type="checkbox" name="z-${i}" value="${e.Name}">
+        <label for="${i}" class='guest-label'>${capitalize(e.Name)}</label>
+      </div>
+        `
+    ).join('')}
+      <input class='hidden' aria-hidden=true type="text" name="family" value="${
+        STATE.group.Host
+      }">
+      `
+  })
+}
+
+function capitalize(text) {
+  return text
+    .split(' ')
+    .map((str) =>
+      str ? str[0].toUpperCase() + str.substr(1).toLowerCase() : ''
+    )
+    .join(' ')
+}
+
+function hasChanged(key) {
+  return STATE.group?.Members.reduce((acc, el) => {
+    const wasRemoved = key.indexOf('REMOVE') > 0
+    const K = key.replace('REMOVE', '').toUpperCase()
+    if (wasRemoved && el.Name === K && el.Attending) acc = true
+    return acc
+  }, false)
 }
